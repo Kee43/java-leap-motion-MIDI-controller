@@ -52,7 +52,7 @@ class LeapMotionListener extends Listener {
 
 		MainGUI.setLeapConnected();
 	}
-	
+
 	/**
 	 * On the controller being disconnected
 	 * 
@@ -64,7 +64,7 @@ class LeapMotionListener extends Listener {
 		setUp = false;
 		MainGUI.setLeapDisconnected();
 	}
-	
+
 	/**
 	 * On exit of the controller
 	 * 
@@ -156,7 +156,7 @@ class LeapMotionListener extends Listener {
 					}
 				} else if (selectedAction == 3){
 					if (MainGUI.getSelectedTrack() == 17){
-						MainGUI.logMessage("Global Tap Tempo");
+
 						axisValue = getShortAxisValue(MainGUI.getGlobalAction2Axis(), hand.palmPosition());
 						gestures.sendData(17, selectedAction, 15, axisNumber, axisValue, MainGUI.getGlobalAction2Min(), MainGUI.getGlobalAction2Max());
 					} else {
@@ -189,31 +189,42 @@ class LeapMotionListener extends Listener {
 					selectedAction = 0;
 				}
 				if (thumb == null && index != null && middle != null && ring == null && pinky == null && fingersRightExtended == 2){
+					if (MainGUI.getSelectedTrack() != 17){
+						GUI.Log("Action 1");
+					} 
 					selectedAction = 2;
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 0);
 				}
 				if (thumb == null && index != null && middle != null && ring != null && pinky == null && fingersRightExtended == 3){
 					selectedAction = 3;
+					if (MainGUI.getSelectedTrack() != 17){
+						GUI.Log("Action 2");
+					} 
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 1);
 				}
 				if (thumb == null && index != null && middle != null && ring != null && pinky != null && fingersRightExtended == 4){
 					selectedAction = 4;
+					GUI.Log("Action 3");
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 2);
 				}
 				if (thumb != null && index != null && middle != null && ring != null && pinky != null && fingersRightExtended == 5){
 					selectedAction = 5;
+					GUI.Log("Action 4");
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 3);
 				}
 				if (thumb == null && index != null && middle == null && ring == null && pinky != null && fingersRightExtended == 2){
 					selectedAction = 6;
+					GUI.Log("Action 5");
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 4);
 				}
 				if (thumb != null && index != null && middle == null && ring == null && pinky == null && fingersRightExtended == 2){
 					selectedAction = 7;
+					GUI.Log("Action 6");
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 5);
 				}
 				if (thumb != null && index == null && middle == null && ring == null && pinky == null && fingersRightExtended == 1){
 					selectedAction = 8;
+					GUI.Log("Action 7");
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 6);
 				}
 			} 

@@ -137,7 +137,7 @@ public class MainGUI extends JFrame implements ActionListener {
 	static MainGUI window;
 
 	private static Color COLOR_BACKGROUND = new Color(240, 240, 240);
-	private static Color COLOUR_SELECTED = new Color(171, 198, 171);
+	private static Color COLOUR_SELECTED = new Color(179, 224, 255);
 
 	static Settings settings;
 
@@ -3436,11 +3436,7 @@ public class MainGUI extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * Creating a MIDI address object
-	 * 
-	 * @param aTrack - Track
-	 * @param aChannel - Channel
-	 * @param aCC - CC command
+	 * Getting the list of available MIDI Devices
 	 */
 	private void getMidiDevices(){
 
@@ -3462,11 +3458,7 @@ public class MainGUI extends JFrame implements ActionListener {
 	}
 	
 	/**
-	 * Creating a MIDI address object
-	 * 
-	 * @param aTrack - Track
-	 * @param aChannel - Channel
-	 * @param aCC - CC command
+	 * Setting the interface to show the leap motion connected
 	 */
 	public static void setLeapConnected(){
 		tfLeapStatus.setText("Connected");
@@ -3474,12 +3466,8 @@ public class MainGUI extends JFrame implements ActionListener {
 
 	}
 	
-	/**
-	 * Creating a MIDI address object
-	 * 
-	 * @param aTrack - Track
-	 * @param aChannel - Channel
-	 * @param aCC - CC command
+	 /**
+	 * Setting the interface to show the leap motion disconnected
 	 */
 	public static void setLeapDisconnected(){
 		tfLeapStatus.setText("Disonnected");
@@ -3487,47 +3475,58 @@ public class MainGUI extends JFrame implements ActionListener {
 	}
 	
 	/**
-	 * Creating a MIDI address object
-	 * 
-	 * @param aTrack - Track
-	 * @param aChannel - Channel
-	 * @param aCC - CC command
+	 * Setting the interface to the data from the left hand
+	 * @param aFingers - Number of fingers held out
+	 * @param aXValue - X coordinate of the left hand
+	 * @param aYValue - Y coordinate of the left hand
+	 * @param aZValue - Z coordinate of the left hand
 	 */
-	public static void setLeftHandData(int fingers, float X, float Y, float Z){
+	public static void setLeftHandData(int aFingers, float aXValue, float aYValue, float aZValue){
 
 		int x, y, z;
-		x = (int) X;
-		y = (int) Y;
-		z = (int) Z;
+		x = (int) aXValue;
+		y = (int) aYValue;
+		z = (int) aZValue;
 
-		tfLeftFingers.setText(Integer.toString(fingers));
+		tfLeftFingers.setText(Integer.toString(aFingers));
 		tfLeftX.setText(Integer.toString(x));
 		tfLeftY.setText(Integer.toString(y));
 		tfLeftZ.setText(Integer.toString(z));
 	}
 
-	public static void setRightHandData(int fingers, float X, float Y, float Z){
+	/**
+	 * Setting the interface to the data from the right hand
+	 * @param aFingers - Number of fingers held out
+	 * @param aXValue - X coordinate of the right hand
+	 * @param aYValue - Y coordinate of the right hand
+	 * @param aZValue - Z coordinate of the right hand
+	 */
+	public static void setRightHandData(int aFingers, float aXValue, float aYValue, float aZValue){
 
 		int x, y, z;
-		x = (int) X;
-		y = (int) Y;
-		z = (int) Z;
+		x = (int) aXValue;
+		y = (int) aYValue;
+		z = (int) aZValue;
 
-		tfRightFingers.setText(Integer.toString(fingers));
+		tfRightFingers.setText(Integer.toString(aFingers));
 		tfRightX.setText(Integer.toString(x));
 		tfRightY.setText(Integer.toString(y));
 		tfRightZ.setText(Integer.toString(z));
 	}
 
-	public static void logMessage(String message){
+	/**
+	 * Logging messages on the GUI
+	 * @param aMessage - Message to be logged
+	 */
+	public static void logMessage(String aMessage){
 
-		textArea.append(message + "\n" ); 
+		textArea.append(aMessage + "\n" ); 
 		textArea.setCaretPosition(textArea.getDocument().getLength());
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource().equals(btnOpenTrack1Action1)){
+	public void actionPerformed(ActionEvent aEvent) {
+		if (aEvent.getSource().equals(btnOpenTrack1Action1)){
 			if (btnOpenTrack1Action1.getText() == "-"){
 				btnOpenTrack1Action1.setText("+");
 				lblTrack1Action1.setVisible(false);
@@ -3537,10 +3536,9 @@ public class MainGUI extends JFrame implements ActionListener {
 				lblTrack1Action1.setVisible(true);
 				sliderTrack1Action1.setVisible(true);
 				openDialog(1, 0);
-
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack1Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack1Action2)){
 			if (btnOpenTrack1Action2.getText() == "-"){
 				btnOpenTrack1Action2.setText("+");
 				lblTrack1Action2.setVisible(false);
@@ -3552,7 +3550,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(1, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack1Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack1Action3)){
 			if (btnOpenTrack1Action3.getText() == "-"){
 				btnOpenTrack1Action3.setText("+");
 				lblTrack1Action3.setVisible(false);
@@ -3564,7 +3562,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(1, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack1Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack1Action4)){
 			if (btnOpenTrack1Action4.getText() == "-"){
 				btnOpenTrack1Action4.setText("+");
 				lblTrack1Action4.setVisible(false);
@@ -3576,7 +3574,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(1, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack1Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack1Action5)){
 			if (btnOpenTrack1Action5.getText() == "-"){
 				btnOpenTrack1Action5.setText("+");
 				lblTrack1Action5.setVisible(false);
@@ -3588,7 +3586,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(1, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack1Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack1Action6)){
 			if (btnOpenTrack1Action6.getText() == "-"){
 				btnOpenTrack1Action6.setText("+");
 				lblTrack1Action6.setVisible(false);
@@ -3600,7 +3598,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(1, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack1Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack1Action7)){
 			if (btnOpenTrack1Action7.getText() == "-"){
 				btnOpenTrack1Action7.setText("+");
 				lblTrack1Action7.setVisible(false);
@@ -3612,7 +3610,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(1, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack2Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack2Action1)){
 			if (btnOpenTrack2Action1.getText() == "-"){
 				btnOpenTrack2Action1.setText("+");
 				lblTrack2Action1.setVisible(false);
@@ -3625,7 +3623,7 @@ public class MainGUI extends JFrame implements ActionListener {
 
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack2Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack2Action2)){
 			if (btnOpenTrack2Action2.getText() == "-"){
 				btnOpenTrack2Action2.setText("+");
 				lblTrack2Action2.setVisible(false);
@@ -3637,7 +3635,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack2Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack2Action3)){
 			if (btnOpenTrack2Action3.getText() == "-"){
 				btnOpenTrack2Action3.setText("+");
 				lblTrack2Action3.setVisible(false);
@@ -3649,7 +3647,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack2Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack2Action4)){
 			if (btnOpenTrack2Action4.getText() == "-"){
 				btnOpenTrack2Action4.setText("+");
 				lblTrack2Action4.setVisible(false);
@@ -3661,7 +3659,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack2Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack2Action5)){
 			if (btnOpenTrack2Action5.getText() == "-"){
 				btnOpenTrack2Action5.setText("+");
 				lblTrack2Action5.setVisible(false);
@@ -3673,7 +3671,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack2Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack2Action6)){
 			if (btnOpenTrack2Action6.getText() == "-"){
 				btnOpenTrack2Action6.setText("+");
 				lblTrack2Action6.setVisible(false);
@@ -3685,7 +3683,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action7)){
 			if (btnOpenTrack3Action7.getText() == "-"){
 				btnOpenTrack3Action7.setText("+");
 				lblTrack3Action7.setVisible(false);
@@ -3697,7 +3695,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action1)){
 			if (btnOpenTrack3Action1.getText() == "-"){
 				btnOpenTrack3Action1.setText("+");
 				lblTrack3Action1.setVisible(false);
@@ -3709,7 +3707,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack3Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action2)){
 			if (btnOpenTrack3Action2.getText() == "-"){
 				btnOpenTrack3Action2.setText("+");
 				lblTrack3Action2.setVisible(false);
@@ -3721,7 +3719,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action3)){
 			if (btnOpenTrack3Action3.getText() == "-"){
 				btnOpenTrack3Action3.setText("+");
 				lblTrack3Action3.setVisible(false);
@@ -3733,7 +3731,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action4)){
 			if (btnOpenTrack3Action4.getText() == "-"){
 				btnOpenTrack3Action4.setText("+");
 				lblTrack3Action4.setVisible(false);
@@ -3745,7 +3743,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action5)){
 			if (btnOpenTrack3Action5.getText() == "-"){
 				btnOpenTrack3Action5.setText("+");
 				lblTrack3Action5.setVisible(false);
@@ -3757,7 +3755,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action6)){
 			if (btnOpenTrack3Action6.getText() == "-"){
 				btnOpenTrack3Action6.setText("+");
 				lblTrack3Action6.setVisible(false);
@@ -3769,7 +3767,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack3Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack3Action7)){
 			if (btnOpenTrack3Action7.getText() == "-"){
 				btnOpenTrack3Action7.setText("+");
 				lblTrack3Action7.setVisible(false);
@@ -3781,7 +3779,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(3, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack4Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action1)){
 			if (btnOpenTrack4Action1.getText() == "-"){
 				btnOpenTrack4Action1.setText("+");
 				lblTrack4Action1.setVisible(false);
@@ -3793,7 +3791,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack4Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action2)){
 			if (btnOpenTrack4Action2.getText() == "-"){
 				btnOpenTrack4Action2.setText("+");
 				lblTrack4Action2.setVisible(false);
@@ -3805,7 +3803,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack4Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action3)){
 			if (btnOpenTrack4Action3.getText() == "-"){
 				btnOpenTrack4Action3.setText("+");
 				lblTrack4Action3.setVisible(false);
@@ -3817,7 +3815,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack4Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action4)){
 			if (btnOpenTrack4Action4.getText() == "-"){
 				btnOpenTrack4Action4.setText("+");
 				lblTrack4Action4.setVisible(false);
@@ -3829,7 +3827,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack4Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action5)){
 			if (btnOpenTrack4Action5.getText() == "-"){
 				btnOpenTrack4Action5.setText("+");
 				lblTrack4Action5.setVisible(false);
@@ -3841,7 +3839,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack4Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action6)){
 			if (btnOpenTrack4Action6.getText() == "-"){
 				btnOpenTrack4Action6.setText("+");
 				lblTrack4Action6.setVisible(false);
@@ -3853,7 +3851,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack4Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack4Action7)){
 			if (btnOpenTrack4Action7.getText() == "-"){
 				btnOpenTrack4Action7.setText("+");
 				lblTrack4Action7.setVisible(false);
@@ -3865,7 +3863,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(4, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack5Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action1)){
 			if (btnOpenTrack5Action1.getText() == "-"){
 				btnOpenTrack5Action1.setText("+");
 				lblTrack5Action1.setVisible(false);
@@ -3877,7 +3875,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack5Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action2)){
 			if (btnOpenTrack5Action2.getText() == "-"){
 				btnOpenTrack5Action2.setText("+");
 				lblTrack5Action2.setVisible(false);
@@ -3889,7 +3887,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack5Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action3)){
 			if (btnOpenTrack5Action3.getText() == "-"){
 				btnOpenTrack5Action3.setText("+");
 				lblTrack5Action3.setVisible(false);
@@ -3901,7 +3899,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack5Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action4)){
 			if (btnOpenTrack5Action4.getText() == "-"){
 				btnOpenTrack5Action4.setText("+");
 				lblTrack5Action4.setVisible(false);
@@ -3913,7 +3911,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack5Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action5)){
 			if (btnOpenTrack5Action5.getText() == "-"){
 				btnOpenTrack5Action5.setText("+");
 				lblTrack5Action5.setVisible(false);
@@ -3925,7 +3923,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack5Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action6)){
 			if (btnOpenTrack5Action6.getText() == "-"){
 				btnOpenTrack5Action6.setText("+");
 				lblTrack5Action6.setVisible(false);
@@ -3937,7 +3935,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack5Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack5Action7)){
 			if (btnOpenTrack5Action7.getText() == "-"){
 				btnOpenTrack5Action7.setText("+");
 				lblTrack5Action7.setVisible(false);
@@ -3949,7 +3947,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(5, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack6Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action1)){
 			if (btnOpenTrack6Action1.getText() == "-"){
 				btnOpenTrack6Action1.setText("+");
 				lblTrack6Action1.setVisible(false);
@@ -3961,7 +3959,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack6Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action2)){
 			if (btnOpenTrack6Action2.getText() == "-"){
 				btnOpenTrack6Action2.setText("+");
 				lblTrack6Action2.setVisible(false);
@@ -3973,7 +3971,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack6Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action3)){
 			if (btnOpenTrack6Action3.getText() == "-"){
 				btnOpenTrack6Action3.setText("+");
 				lblTrack6Action3.setVisible(false);
@@ -3985,7 +3983,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack6Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action4)){
 			if (btnOpenTrack6Action4.getText() == "-"){
 				btnOpenTrack6Action4.setText("+");
 				lblTrack6Action4.setVisible(false);
@@ -3997,7 +3995,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack6Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action5)){
 			if (btnOpenTrack6Action5.getText() == "-"){
 				btnOpenTrack6Action5.setText("+");
 				lblTrack6Action5.setVisible(false);
@@ -4009,7 +4007,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack6Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action6)){
 			if (btnOpenTrack6Action6.getText() == "-"){
 				btnOpenTrack6Action6.setText("+");
 				lblTrack6Action6.setVisible(false);
@@ -4021,7 +4019,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack6Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack6Action7)){
 			if (btnOpenTrack6Action7.getText() == "-"){
 				btnOpenTrack6Action7.setText("+");
 				lblTrack6Action7.setVisible(false);
@@ -4033,7 +4031,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(6, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack7Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action1)){
 			if (btnOpenTrack7Action1.getText() == "-"){
 				btnOpenTrack7Action1.setText("+");
 				lblTrack7Action1.setVisible(false);
@@ -4046,7 +4044,7 @@ public class MainGUI extends JFrame implements ActionListener {
 
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack7Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action2)){
 			if (btnOpenTrack7Action2.getText() == "-"){
 				btnOpenTrack7Action2.setText("+");
 				lblTrack7Action2.setVisible(false);
@@ -4058,7 +4056,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(7, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack7Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action3)){
 			if (btnOpenTrack7Action3.getText() == "-"){
 				btnOpenTrack7Action3.setText("+");
 				lblTrack7Action3.setVisible(false);
@@ -4070,7 +4068,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(7, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack7Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action4)){
 			if (btnOpenTrack7Action4.getText() == "-"){
 				btnOpenTrack7Action4.setText("+");
 				lblTrack7Action4.setVisible(false);
@@ -4082,7 +4080,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(7, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack7Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action5)){
 			if (btnOpenTrack7Action5.getText() == "-"){
 				btnOpenTrack7Action5.setText("+");
 				lblTrack7Action5.setVisible(false);
@@ -4094,7 +4092,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(7, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack7Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action6)){
 			if (btnOpenTrack7Action6.getText() == "-"){
 				btnOpenTrack7Action6.setText("+");
 				lblTrack7Action6.setVisible(false);
@@ -4106,7 +4104,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(7, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack7Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack7Action7)){
 			if (btnOpenTrack7Action7.getText() == "-"){
 				btnOpenTrack7Action7.setText("+");
 				lblTrack7Action7.setVisible(false);
@@ -4118,7 +4116,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(7, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack8Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action1)){
 			if (btnOpenTrack8Action1.getText() == "-"){
 				btnOpenTrack8Action1.setText("+");
 				lblTrack8Action1.setVisible(false);
@@ -4131,7 +4129,7 @@ public class MainGUI extends JFrame implements ActionListener {
 
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack8Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action2)){
 			if (btnOpenTrack8Action2.getText() == "-"){
 				btnOpenTrack8Action2.setText("+");
 				lblTrack8Action2.setVisible(false);
@@ -4143,7 +4141,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(8, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack8Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action3)){
 			if (btnOpenTrack8Action3.getText() == "-"){
 				btnOpenTrack8Action3.setText("+");
 				lblTrack8Action3.setVisible(false);
@@ -4155,7 +4153,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(8, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack8Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action4)){
 			if (btnOpenTrack8Action4.getText() == "-"){
 				btnOpenTrack8Action4.setText("+");
 				lblTrack8Action4.setVisible(false);
@@ -4167,7 +4165,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(8, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack8Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action5)){
 			if (btnOpenTrack8Action5.getText() == "-"){
 				btnOpenTrack8Action5.setText("+");
 				lblTrack8Action5.setVisible(false);
@@ -4179,7 +4177,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(8, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack8Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action6)){
 			if (btnOpenTrack8Action6.getText() == "-"){
 				btnOpenTrack8Action6.setText("+");
 				lblTrack8Action6.setVisible(false);
@@ -4191,7 +4189,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(8, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack8Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack8Action7)){
 			if (btnOpenTrack8Action7.getText() == "-"){
 				btnOpenTrack8Action7.setText("+");
 				lblTrack8Action7.setVisible(false);
@@ -4203,7 +4201,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(8, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack9Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action1)){
 			if (btnOpenTrack9Action1.getText() == "-"){
 				btnOpenTrack9Action1.setText("+");
 				lblTrack9Action1.setVisible(false);
@@ -4215,7 +4213,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack9Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action2)){
 			if (btnOpenTrack9Action2.getText() == "-"){
 				btnOpenTrack9Action2.setText("+");
 				lblTrack9Action2.setVisible(false);
@@ -4227,7 +4225,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack9Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action3)){
 			if (btnOpenTrack9Action3.getText() == "-"){
 				btnOpenTrack9Action3.setText("+");
 				lblTrack9Action3.setVisible(false);
@@ -4239,7 +4237,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack9Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action4)){
 			if (btnOpenTrack9Action4.getText() == "-"){
 				btnOpenTrack9Action4.setText("+");
 				lblTrack9Action4.setVisible(false);
@@ -4251,7 +4249,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack9Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action5)){
 			if (btnOpenTrack9Action5.getText() == "-"){
 				btnOpenTrack9Action5.setText("+");
 				lblTrack9Action5.setVisible(false);
@@ -4263,7 +4261,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack9Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action6)){
 			if (btnOpenTrack9Action6.getText() == "-"){
 				btnOpenTrack9Action6.setText("+");
 				lblTrack9Action6.setVisible(false);
@@ -4275,7 +4273,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack9Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack9Action7)){
 			if (btnOpenTrack9Action7.getText() == "-"){
 				btnOpenTrack9Action7.setText("+");
 				lblTrack9Action7.setVisible(false);
@@ -4287,7 +4285,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(9, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack10Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action1)){
 			if (btnOpenTrack10Action1.getText() == "-"){
 				btnOpenTrack10Action1.setText("+");
 				lblTrack10Action1.setVisible(false);
@@ -4300,7 +4298,7 @@ public class MainGUI extends JFrame implements ActionListener {
 
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack10Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action2)){
 			if (btnOpenTrack10Action2.getText() == "-"){
 				btnOpenTrack10Action2.setText("+");
 				lblTrack10Action2.setVisible(false);
@@ -4312,7 +4310,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(10, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack10Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action3)){
 			if (btnOpenTrack10Action3.getText() == "-"){
 				btnOpenTrack10Action3.setText("+");
 				lblTrack10Action3.setVisible(false);
@@ -4324,7 +4322,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(10, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack10Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action4)){
 			if (btnOpenTrack10Action4.getText() == "-"){
 				btnOpenTrack10Action4.setText("+");
 				lblTrack10Action4.setVisible(false);
@@ -4336,7 +4334,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(10, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack10Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action5)){
 			if (btnOpenTrack10Action5.getText() == "-"){
 				btnOpenTrack10Action5.setText("+");
 				lblTrack10Action5.setVisible(false);
@@ -4348,7 +4346,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(10, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack10Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action6)){
 			if (btnOpenTrack10Action6.getText() == "-"){
 				btnOpenTrack10Action6.setText("+");
 				lblTrack10Action6.setVisible(false);
@@ -4360,7 +4358,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(10, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack10Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack10Action7)){
 			if (btnOpenTrack10Action7.getText() == "-"){
 				btnOpenTrack10Action7.setText("+");
 				lblTrack10Action7.setVisible(false);
@@ -4372,7 +4370,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(10, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack11Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action1)){
 			if (btnOpenTrack11Action1.getText() == "-"){
 				btnOpenTrack11Action1.setText("+");
 				lblTrack11Action1.setVisible(false);
@@ -4384,7 +4382,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack11Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action2)){
 			if (btnOpenTrack11Action2.getText() == "-"){
 				btnOpenTrack11Action2.setText("+");
 				lblTrack11Action2.setVisible(false);
@@ -4396,7 +4394,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack11Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action3)){
 			if (btnOpenTrack11Action3.getText() == "-"){
 				btnOpenTrack11Action3.setText("+");
 				lblTrack11Action3.setVisible(false);
@@ -4408,7 +4406,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack11Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action4)){
 			if (btnOpenTrack11Action4.getText() == "-"){
 				btnOpenTrack11Action4.setText("+");
 				lblTrack11Action4.setVisible(false);
@@ -4420,7 +4418,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack11Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action5)){
 			if (btnOpenTrack11Action5.getText() == "-"){
 				btnOpenTrack11Action5.setText("+");
 				lblTrack11Action5.setVisible(false);
@@ -4432,7 +4430,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack11Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action6)){
 			if (btnOpenTrack11Action6.getText() == "-"){
 				btnOpenTrack11Action6.setText("+");
 				lblTrack11Action6.setVisible(false);
@@ -4444,7 +4442,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack11Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack11Action7)){
 			if (btnOpenTrack11Action7.getText() == "-"){
 				btnOpenTrack11Action7.setText("+");
 				lblTrack11Action7.setVisible(false);
@@ -4456,7 +4454,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(11, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack12Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action1)){
 			if (btnOpenTrack12Action1.getText() == "-"){
 				btnOpenTrack12Action1.setText("+");
 				lblTrack12Action1.setVisible(false);
@@ -4468,7 +4466,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack12Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action2)){
 			if (btnOpenTrack12Action2.getText() == "-"){
 				btnOpenTrack12Action2.setText("+");
 				lblTrack12Action2.setVisible(false);
@@ -4480,7 +4478,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack12Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action3)){
 			if (btnOpenTrack12Action3.getText() == "-"){
 				btnOpenTrack12Action3.setText("+");
 				lblTrack12Action3.setVisible(false);
@@ -4492,7 +4490,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack12Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action4)){
 			if (btnOpenTrack12Action4.getText() == "-"){
 				btnOpenTrack12Action4.setText("+");
 				lblTrack12Action4.setVisible(false);
@@ -4504,7 +4502,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack12Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action5)){
 			if (btnOpenTrack12Action5.getText() == "-"){
 				btnOpenTrack12Action5.setText("+");
 				lblTrack12Action5.setVisible(false);
@@ -4516,7 +4514,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack12Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action6)){
 			if (btnOpenTrack12Action6.getText() == "-"){
 				btnOpenTrack12Action6.setText("+");
 				lblTrack12Action6.setVisible(false);
@@ -4528,7 +4526,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack12Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack12Action7)){
 			if (btnOpenTrack12Action7.getText() == "-"){
 				btnOpenTrack12Action7.setText("+");
 				lblTrack12Action7.setVisible(false);
@@ -4540,7 +4538,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(12, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack13Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action1)){
 			if (btnOpenTrack13Action1.getText() == "-"){
 				btnOpenTrack13Action1.setText("+");
 				lblTrack13Action1.setVisible(false);
@@ -4552,7 +4550,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack13Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action2)){
 			if (btnOpenTrack13Action2.getText() == "-"){
 				btnOpenTrack13Action2.setText("+");
 				lblTrack13Action2.setVisible(false);
@@ -4564,7 +4562,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack13Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action3)){
 			if (btnOpenTrack13Action3.getText() == "-"){
 				btnOpenTrack13Action3.setText("+");
 				lblTrack13Action3.setVisible(false);
@@ -4576,7 +4574,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack13Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action4)){
 			if (btnOpenTrack13Action4.getText() == "-"){
 				btnOpenTrack13Action4.setText("+");
 				lblTrack13Action4.setVisible(false);
@@ -4588,7 +4586,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack13Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action5)){
 			if (btnOpenTrack13Action5.getText() == "-"){
 				btnOpenTrack13Action5.setText("+");
 				lblTrack13Action5.setVisible(false);
@@ -4600,7 +4598,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack13Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action6)){
 			if (btnOpenTrack13Action6.getText() == "-"){
 				btnOpenTrack13Action6.setText("+");
 				lblTrack13Action6.setVisible(false);
@@ -4612,7 +4610,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack13Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack13Action7)){
 			if (btnOpenTrack13Action7.getText() == "-"){
 				btnOpenTrack13Action7.setText("+");
 				lblTrack13Action7.setVisible(false);
@@ -4624,7 +4622,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(13, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack14Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action1)){
 			if (btnOpenTrack14Action1.getText() == "-"){
 				btnOpenTrack14Action1.setText("+");
 				lblTrack14Action1.setVisible(false);
@@ -4636,7 +4634,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack14Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action2)){
 			if (btnOpenTrack14Action2.getText() == "-"){
 				btnOpenTrack14Action2.setText("+");
 				lblTrack14Action2.setVisible(false);
@@ -4648,7 +4646,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack14Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action3)){
 			if (btnOpenTrack14Action3.getText() == "-"){
 				btnOpenTrack14Action3.setText("+");
 				lblTrack14Action3.setVisible(false);
@@ -4660,7 +4658,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack14Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action4)){
 			if (btnOpenTrack14Action4.getText() == "-"){
 				btnOpenTrack14Action4.setText("+");
 				lblTrack14Action4.setVisible(false);
@@ -4672,7 +4670,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack14Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action5)){
 			if (btnOpenTrack14Action5.getText() == "-"){
 				btnOpenTrack14Action5.setText("+");
 				lblTrack14Action5.setVisible(false);
@@ -4684,7 +4682,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack14Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action6)){
 			if (btnOpenTrack14Action6.getText() == "-"){
 				btnOpenTrack14Action6.setText("+");
 				lblTrack14Action6.setVisible(false);
@@ -4696,7 +4694,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack14Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack14Action7)){
 			if (btnOpenTrack14Action7.getText() == "-"){
 				btnOpenTrack14Action7.setText("+");
 				lblTrack14Action7.setVisible(false);
@@ -4708,7 +4706,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(14, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack15Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action1)){
 			if (btnOpenTrack15Action1.getText() == "-"){
 				btnOpenTrack15Action1.setText("+");
 				lblTrack15Action1.setVisible(false);
@@ -4720,7 +4718,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack15Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action2)){
 			if (btnOpenTrack15Action2.getText() == "-"){
 				btnOpenTrack15Action2.setText("+");
 				lblTrack15Action2.setVisible(false);
@@ -4732,7 +4730,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack15Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action3)){
 			if (btnOpenTrack15Action3.getText() == "-"){
 				btnOpenTrack15Action3.setText("+");
 				lblTrack15Action3.setVisible(false);
@@ -4744,7 +4742,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack15Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action4)){
 			if (btnOpenTrack15Action4.getText() == "-"){
 				btnOpenTrack15Action4.setText("+");
 				lblTrack15Action4.setVisible(false);
@@ -4756,7 +4754,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack15Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action5)){
 			if (btnOpenTrack15Action5.getText() == "-"){
 				btnOpenTrack15Action5.setText("+");
 				lblTrack15Action5.setVisible(false);
@@ -4768,7 +4766,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack15Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action6)){
 			if (btnOpenTrack15Action6.getText() == "-"){
 				btnOpenTrack15Action6.setText("+");
 				lblTrack15Action6.setVisible(false);
@@ -4780,7 +4778,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack15Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack15Action7)){
 			if (btnOpenTrack15Action7.getText() == "-"){
 				btnOpenTrack15Action7.setText("+");
 				lblTrack15Action7.setVisible(false);
@@ -4792,7 +4790,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(15, 6);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack16Action1)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action1)){
 			if (btnOpenTrack16Action1.getText() == "-"){
 				btnOpenTrack16Action1.setText("+");
 				lblTrack16Action1.setVisible(false);
@@ -4804,7 +4802,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(16, 0);
 			}	
 		}
-		if (e.getSource().equals(btnOpenTrack16Action2)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action2)){
 			if (btnOpenTrack16Action2.getText() == "-"){
 				btnOpenTrack16Action2.setText("+");
 				lblTrack16Action2.setVisible(false);
@@ -4816,7 +4814,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(16, 1);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack16Action3)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action3)){
 			if (btnOpenTrack16Action3.getText() == "-"){
 				btnOpenTrack16Action3.setText("+");
 				lblTrack16Action3.setVisible(false);
@@ -4828,7 +4826,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(16, 2);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack16Action4)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action4)){
 			if (btnOpenTrack16Action4.getText() == "-"){
 				btnOpenTrack16Action4.setText("+");
 				lblTrack16Action4.setVisible(false);
@@ -4840,7 +4838,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(16, 3);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack16Action5)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action5)){
 			if (btnOpenTrack16Action5.getText() == "-"){
 				btnOpenTrack16Action5.setText("+");
 				lblTrack16Action5.setVisible(false);
@@ -4852,7 +4850,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(16, 4);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack16Action6)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action6)){
 			if (btnOpenTrack16Action6.getText() == "-"){
 				btnOpenTrack16Action6.setText("+");
 				lblTrack16Action6.setVisible(false);
@@ -4864,7 +4862,7 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(16, 5);
 			}
 		}
-		if (e.getSource().equals(btnOpenTrack16Action7)){
+		if (aEvent.getSource().equals(btnOpenTrack16Action7)){
 			if (btnOpenTrack16Action7.getText() == "-"){
 				btnOpenTrack16Action7.setText("+");
 				lblTrack16Action7.setVisible(false);
@@ -4878,76 +4876,76 @@ public class MainGUI extends JFrame implements ActionListener {
 		}
 
 		// Channel Combo Boxes
-		if (e.getSource().equals(cbChannelTrack1)){
+		if (aEvent.getSource().equals(cbChannelTrack1)){
 			settings.setTrackChannel(1, cbChannelTrack1.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack2)){
+		if (aEvent.getSource().equals(cbChannelTrack2)){
 			settings.setTrackChannel(2, cbChannelTrack2.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack3)){
+		if (aEvent.getSource().equals(cbChannelTrack3)){
 			settings.setTrackChannel(3, cbChannelTrack3.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack4)){
+		if (aEvent.getSource().equals(cbChannelTrack4)){
 			settings.setTrackChannel(4, cbChannelTrack4.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack5)){
+		if (aEvent.getSource().equals(cbChannelTrack5)){
 			settings.setTrackChannel(5, cbChannelTrack5.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack6)){
+		if (aEvent.getSource().equals(cbChannelTrack6)){
 			settings.setTrackChannel(6, cbChannelTrack6.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack7)){
+		if (aEvent.getSource().equals(cbChannelTrack7)){
 			settings.setTrackChannel(7, cbChannelTrack7.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack8)){
+		if (aEvent.getSource().equals(cbChannelTrack8)){
 			settings.setTrackChannel(8, cbChannelTrack8.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack9)){
+		if (aEvent.getSource().equals(cbChannelTrack9)){
 			settings.setTrackChannel(9, cbChannelTrack9.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack10)){
+		if (aEvent.getSource().equals(cbChannelTrack10)){
 			settings.setTrackChannel(10, cbChannelTrack10.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack11)){
+		if (aEvent.getSource().equals(cbChannelTrack11)){
 			settings.setTrackChannel(11, cbChannelTrack11.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack12)){
+		if (aEvent.getSource().equals(cbChannelTrack12)){
 			settings.setTrackChannel(12, cbChannelTrack12.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack13)){
+		if (aEvent.getSource().equals(cbChannelTrack13)){
 			settings.setTrackChannel(13, cbChannelTrack13.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack14)){
+		if (aEvent.getSource().equals(cbChannelTrack14)){
 			settings.setTrackChannel(14, cbChannelTrack14.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack15)){
+		if (aEvent.getSource().equals(cbChannelTrack15)){
 			settings.setTrackChannel(15, cbChannelTrack15.getSelectedIndex());
 		}
-		if (e.getSource().equals(cbChannelTrack16)){
+		if (aEvent.getSource().equals(cbChannelTrack16)){
 			settings.setTrackChannel(16, cbChannelTrack16.getSelectedIndex());
 		}
 
-		if (e.getSource().equals(cbTapTempoTap)){
+		if (aEvent.getSource().equals(cbTapTempoTap)){
 			settings.setTapTapValue(cbTapTempoTap.getSelectedIndex());
 		}
 
-		if (e.getSource().equals(cbGlobalAction1Max)){
+		if (aEvent.getSource().equals(cbGlobalAction1Max)){
 			settings.setGlobalActionValue(cbGlobalAction1Max.getSelectedIndex(), 1, true);
 		}
 
-		if (e.getSource().equals(cbGlobalAction1Min)){
+		if (aEvent.getSource().equals(cbGlobalAction1Min)){
 			settings.setGlobalActionValue(cbGlobalAction1Min.getSelectedIndex(), 1, false);
 		}
 
-		if (e.getSource().equals(cbGlobalAction2Max)){
+		if (aEvent.getSource().equals(cbGlobalAction2Max)){
 			settings.setGlobalActionValue(cbGlobalAction2Max.getSelectedIndex(), 2, true);
 		}
 
-		if (e.getSource().equals(cbGlobalAction2Min)){
+		if (aEvent.getSource().equals(cbGlobalAction2Min)){
 			settings.setGlobalActionValue(cbGlobalAction2Min.getSelectedIndex(), 2, false);
 		}
 
-		if (e.getSource().equals(btnConfiguration)){
+		if (aEvent.getSource().equals(btnConfiguration)){
 			EventQueue.invokeLater(new Runnable() {
 				public void run() {
 					try {
@@ -4961,34 +4959,66 @@ public class MainGUI extends JFrame implements ActionListener {
 		}
 	}
 
+	/**
+	 * Getting the set minimum value for action 1 of the global commands
+	 * @return Value of the minimum value
+	 */
 	public static int getGlobalAction1Min() {
 		return Integer.valueOf(cbGlobalAction1Min.getSelectedItem().toString());
 	}
-
+	
+	/**
+	 * Getting the set maximum value for action 1 of the global commands
+	 * @return Value of the maximum value
+	 */
 	public static int getGlobalAction1Max() {
 		return Integer.valueOf(cbGlobalAction1Max.getSelectedItem().toString());
 	}
-
+	
+	/**
+	 * Getting the set minimum value for action 2 of the global commands
+	 * @return Value of the minimum value
+	 */
 	public static int getGlobalAction2Min() {
 		return Integer.valueOf(cbGlobalAction2Min.getSelectedItem().toString());
 	}
-
+	
+	/**
+	 * Getting the set maximum value for action 2 of the global commands
+	 * @return Value of the maximum value
+	 */
 	public static int getGlobalAction2Max() {
 		return Integer.valueOf(cbGlobalAction2Max.getSelectedItem().toString());
 	}
-
+	
+	/**
+	 * Getting the set value for the global action 1 axis
+	 * @return Value of the axis
+	 */
 	public static String getGlobalAction1Axis() {
 		return cbGlobalAction1Axis.getSelectedItem().toString();
 	}
-
+	
+	/**
+	 * Getting the set value for the global action 2 axis
+	 * @return Value of the axis
+	 */
 	public static String getGlobalAction2Axis() {
 		return cbGlobalAction2Axis.getSelectedItem().toString();
 	}
-
+	
+	/**
+	 * Getting number of left fingers
+	 * @return Number of fingers
+	 */
 	public static int getLeftFingers(){
 		return Integer.parseInt(tfLeftFingers.getText());
 	}
-
+	
+	/**
+	 * Getting the selected track value
+	 * @return Selected track
+	 */
 	public static int getSelectedTrack(){
 		String track = tfSelectedTrackDigit1.getText();
 		if (track.equals("")){
@@ -4997,7 +5027,11 @@ public class MainGUI extends JFrame implements ActionListener {
 			return Integer.valueOf(tfSelectedTrackDigit1.getText());
 		}
 	}
-
+	
+	/**
+	 * Getting the selected track channel
+	 * @return Selected track channel
+	 */
 	public static int getSelectedTrackChannel(){
 		int x = getSelectedTrack();
 		switch (x){
@@ -5041,343 +5075,355 @@ public class MainGUI extends JFrame implements ActionListener {
 
 	static int selectedTrack = 0;
 
-	public static void setSliderValue(int track, int action, int value, int axis) {
+
+	/**
+	 * Setting the value for a slider
+	 * @param aTrack - Track
+	 * @param aAction - Action
+	 * @param aValue - Value
+	 * @param aAxis - Axis
+	 */
+	public static void setSliderValue(int aTrack, int aAction, int aValue, int aAxis) {
 
 		String strAxis = "";
 
-		if (axis == 1){
+		if (aAxis == 1){
 			strAxis = "X";
-		} else if (axis == 2){
+		} else if (aAxis == 2){
 			strAxis = "Y";
-		} else if (axis == 3){
+		} else if (aAxis == 3){
 			strAxis = "Z";
-		} else if (axis == 4){
+		} else if (aAxis == 4){
 			strAxis = "X (i)";
-		} else if (axis == 5){
+		} else if (aAxis == 5){
 			strAxis = "Y (i)";
-		} else if (axis == 6){
+		} else if (aAxis == 6){
 			strAxis = "X (i)";
 		}
 
-		if (track == 1){
-			if (action == 1){
+		if (aTrack == 1){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack1Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack1Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack1Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack1Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack1Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack1Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack1Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack1Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack1Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack1Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack1Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack1Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack1Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack1Action7.setValue(aValue);
 			}
 			tfAxisTrack1.setText(strAxis);
-		} else if (track == 2){
-			if (action == 1){
+		} else if (aTrack == 2){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack2Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack2Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack2Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack2Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack2Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack2Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack2Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack2Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack2Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack2Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack2Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack2Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack2Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack2Action7.setValue(aValue);
 			}
 			tfAxisTrack2.setText(strAxis);
-		} else if (track == 3){
-			if (action == 1){
+		} else if (aTrack == 3){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack3Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack3Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack3Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack3Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack3Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack3Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack3Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack3Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack3Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack3Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack3Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack3Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack3Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack3Action7.setValue(aValue);
 			}
 			tfAxisTrack3.setText(strAxis);
-		} else if (track == 4){
-			if (action == 1){
+		} else if (aTrack == 4){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack4Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack4Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack4Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack4Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack4Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack4Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack4Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack4Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack4Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack4Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack4Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack4Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack4Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack4Action7.setValue(aValue);
 			}
 			tfAxisTrack4.setText(strAxis);
-		} else if (track == 5){
-			if (action == 1){
+		} else if (aTrack == 5){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack5Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack5Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack5Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack5Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack5Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack5Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack5Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack5Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack5Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack5Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack5Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack5Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack5Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack5Action7.setValue(aValue);
 			}
 			tfAxisTrack5.setText(strAxis);
-		} else if (track == 6){
-			if (action == 1){
+		} else if (aTrack == 6){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack6Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack6Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack6Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack6Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack6Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack6Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack6Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack6Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack6Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack6Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack6Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack6Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack6Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack6Action7.setValue(aValue);
 			}
 			tfAxisTrack6.setText(strAxis);
-		} else if (track == 7){
-			if (action == 1){
+		} else if (aTrack == 7){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack7Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack7Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack7Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack7Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack7Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack7Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack7Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack7Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack7Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack7Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack7Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack7Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack7Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack7Action7.setValue(aValue);
 			}
 			tfAxisTrack7.setText(strAxis);
-		} else if (track == 8){
-			if (action == 1){
+		} else if (aTrack == 8){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack8Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack8Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack8Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack8Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack8Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack8Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack8Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack8Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack8Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack8Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack8Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack8Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack8Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack8Action7.setValue(aValue);
 			}
 			tfAxisTrack8.setText(strAxis);
-		} else if (track == 9){
-			if (action == 1){
+		} else if (aTrack == 9){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack9Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack9Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack9Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack9Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack9Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack9Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack9Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack9Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack9Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack9Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack9Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack9Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack9Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack9Action7.setValue(aValue);
 			}
 			tfAxisTrack9.setText(strAxis);
-		} else if (track == 10){
-			if (action == 1){
+		} else if (aTrack == 10){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack10Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack10Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack10Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack10Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack10Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack10Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack10Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack10Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack10Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack10Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack10Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack10Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack10Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack10Action7.setValue(aValue);
 			}
 			tfAxisTrack10.setText(strAxis);
-		} else if (track == 11){
-			if (action == 1){
+		} else if (aTrack == 11){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack11Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack11Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack11Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack11Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack11Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack11Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack11Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack11Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack11Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack11Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack11Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack11Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack11Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack11Action7.setValue(aValue);
 			}
 			tfAxisTrack11.setText(strAxis);
-		} else if (track == 12){
-			if (action == 1){
+		} else if (aTrack == 12){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack12Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack12Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack12Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack12Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack12Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack12Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack12Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack12Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack12Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack12Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack12Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack12Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack12Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack12Action7.setValue(aValue);
 			}
 			tfAxisTrack12.setText(strAxis);
-		} else if (track == 13){
-			if (action == 1){
+		} else if (aTrack == 13){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack13Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack13Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack13Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack13Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack13Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack13Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack13Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack13Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack13Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack13Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack13Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack13Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack13Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack13Action7.setValue(aValue);
 			}
 			tfAxisTrack13.setText(strAxis);
-		} else if (track == 14){
-			if (action == 1){
+		} else if (aTrack == 14){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack14Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack14Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack14Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack14Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack14Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack14Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack14Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack14Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack14Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack14Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack14Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack14Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack14Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack14Action7.setValue(aValue);
 			}
 			tfAxisTrack14.setText(strAxis);
-		} else if (track == 15){
-			if (action == 1){
+		} else if (aTrack == 15){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack15Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack15Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack15Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack15Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack15Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack15Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack15Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack15Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack15Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack15Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack15Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack15Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack15Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack15Action7.setValue(aValue);
 			}
 			tfAxisTrack15.setText(strAxis);
-		} else if (track == 16){
-			if (action == 1){
+		} else if (aTrack == 16){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderTrack16Action1.setValue(value);
-			} else if (action == 3){
-				sliderTrack16Action2.setValue(value);
-			} else if (action == 4){
-				sliderTrack16Action3.setValue(value);
-			} else if (action == 5){
-				sliderTrack16Action4.setValue(value);
-			} else if (action == 6){
-				sliderTrack16Action5.setValue(value);
-			} else if (action == 7){
-				sliderTrack16Action6.setValue(value);
-			} else if (action == 8){
-				sliderTrack16Action7.setValue(value);
+			} else if (aAction == 2){
+				sliderTrack16Action1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderTrack16Action2.setValue(aValue);
+			} else if (aAction == 4){
+				sliderTrack16Action3.setValue(aValue);
+			} else if (aAction == 5){
+				sliderTrack16Action4.setValue(aValue);
+			} else if (aAction == 6){
+				sliderTrack16Action5.setValue(aValue);
+			} else if (aAction == 7){
+				sliderTrack16Action6.setValue(aValue);
+			} else if (aAction == 8){
+				sliderTrack16Action7.setValue(aValue);
 			}
 			tfAxisTrack16.setText(strAxis);
 		} 
 
-		else if (track == 17){
-			if (action == 1){
+		else if (aTrack == 17){
+			if (aAction == 1){
 				// Selecting track 1
-			} else if (action == 2){
-				sliderGlobalAction1.setValue(value);
-			} else if (action == 3){
-				sliderGlobalAction2.setValue(value);
+			} else if (aAction == 2){
+				sliderGlobalAction1.setValue(aValue);
+			} else if (aAction == 3){
+				sliderGlobalAction2.setValue(aValue);
 			} 
 		} 
 	}
-
-	public static void selectTrack(int x) {
-		tfSelectedTrackDigit1.setText(Integer.toString(x));
+	
+	/**
+	 * Setting the value the track background
+	 * @param aTrack - Track
+	 */
+	public static void selectTrack(int aTrack) {
+		tfSelectedTrackDigit1.setText(Integer.toString(aTrack));
 
 		setTrackColour(1, COLOR_BACKGROUND);
 		setTrackColour(2, COLOR_BACKGROUND);
@@ -5397,209 +5443,223 @@ public class MainGUI extends JFrame implements ActionListener {
 		setTrackColour(16, COLOR_BACKGROUND);
 		setTrackColour(17, COLOR_BACKGROUND);
 
-		if (x == 1){
+		if (aTrack == 1){
 			setTrackColour(1, COLOUR_SELECTED);
-		} else if (x == 2){
+		} else if (aTrack == 2){
 			setTrackColour(2, COLOUR_SELECTED);
-		} else if (x == 3){
+		} else if (aTrack == 3){
 			setTrackColour(3, COLOUR_SELECTED);
-		} else if (x == 4){
+		} else if (aTrack == 4){
 			setTrackColour(4, COLOUR_SELECTED);
-		} else if (x == 5){
+		} else if (aTrack == 5){
 			setTrackColour(5, COLOUR_SELECTED);
-		} else if (x == 6){
+		} else if (aTrack == 6){
 			setTrackColour(6, COLOUR_SELECTED);
-		} else if (x == 7){
+		} else if (aTrack == 7){
 			setTrackColour(7, COLOUR_SELECTED);
-		} else if (x == 8){
+		} else if (aTrack == 8){
 			setTrackColour(8, COLOUR_SELECTED);
-		} else if (x == 9){
+		} else if (aTrack == 9){
 			setTrackColour(9, COLOUR_SELECTED);
-		} else if (x == 10){
+		} else if (aTrack == 10){
 			setTrackColour(10, COLOUR_SELECTED);
-		} else if (x == 11){
+		} else if (aTrack == 11){
 			setTrackColour(11, COLOUR_SELECTED);
-		} else if (x == 12){
+		} else if (aTrack == 12){
 			setTrackColour(12, COLOUR_SELECTED);
-		} else if (x == 13){
+		} else if (aTrack == 13){
 			setTrackColour(13, COLOUR_SELECTED);
-		} else if (x == 14){
+		} else if (aTrack == 14){
 			setTrackColour(14, COLOUR_SELECTED);
-		} else if (x == 15){
+		} else if (aTrack == 15){
 			setTrackColour(15, COLOUR_SELECTED);
-		} else if (x == 16){
+		} else if (aTrack == 16){
 			setTrackColour(16, COLOUR_SELECTED);
-		} else if (x == 17){
+		} else if (aTrack == 17){
 			setTrackColour(17, COLOUR_SELECTED);
 		} 
 	}
-
-	public static void setTrackColour(int track, Color colour){
-		if (track == 1){
-			panelTrack1.setBackground(colour);
-			sliderTrack1Action1.setBackground(colour);
-			sliderTrack1Action2.setBackground(colour);
-			sliderTrack1Action3.setBackground(colour);
-			sliderTrack1Action4.setBackground(colour);
-			sliderTrack1Action5.setBackground(colour);
-			sliderTrack1Action6.setBackground(colour);
-			sliderTrack1Action7.setBackground(colour);
-		} else if (track == 2){
-			panelTrack2.setBackground(colour);
-			sliderTrack2Action1.setBackground(colour);
-			sliderTrack2Action2.setBackground(colour);
-			sliderTrack2Action3.setBackground(colour);
-			sliderTrack2Action4.setBackground(colour);
-			sliderTrack2Action5.setBackground(colour);
-			sliderTrack2Action6.setBackground(colour);
-			sliderTrack2Action7.setBackground(colour);
-		} else if (track == 3){
-			panelTrack3.setBackground(colour);
-			sliderTrack3Action1.setBackground(colour);
-			sliderTrack3Action2.setBackground(colour);
-			sliderTrack3Action3.setBackground(colour);
-			sliderTrack3Action4.setBackground(colour);
-			sliderTrack3Action5.setBackground(colour);
-			sliderTrack3Action6.setBackground(colour);
-			sliderTrack3Action7.setBackground(colour);
-		} else if (track == 4){
-			panelTrack4.setBackground(colour);
-			sliderTrack4Action1.setBackground(colour);
-			sliderTrack4Action2.setBackground(colour);
-			sliderTrack4Action3.setBackground(colour);
-			sliderTrack4Action4.setBackground(colour);
-			sliderTrack4Action5.setBackground(colour);
-			sliderTrack4Action6.setBackground(colour);
-			sliderTrack4Action7.setBackground(colour);
-		} else if (track == 5){
-			panelTrack5.setBackground(colour);
-			sliderTrack5Action1.setBackground(colour);
-			sliderTrack5Action2.setBackground(colour);
-			sliderTrack5Action3.setBackground(colour);
-			sliderTrack5Action4.setBackground(colour);
-			sliderTrack5Action5.setBackground(colour);
-			sliderTrack5Action6.setBackground(colour);
-			sliderTrack5Action7.setBackground(colour);
-		} else if (track == 6){
-			panelTrack6.setBackground(colour);
-			sliderTrack6Action1.setBackground(colour);
-			sliderTrack6Action2.setBackground(colour);
-			sliderTrack6Action3.setBackground(colour);
-			sliderTrack6Action4.setBackground(colour);
-			sliderTrack6Action5.setBackground(colour);
-			sliderTrack6Action6.setBackground(colour);
-			sliderTrack6Action7.setBackground(colour);
-		} else if (track == 7){
-			panelTrack7.setBackground(colour);
-			sliderTrack7Action1.setBackground(colour);
-			sliderTrack7Action2.setBackground(colour);
-			sliderTrack7Action3.setBackground(colour);
-			sliderTrack7Action4.setBackground(colour);
-			sliderTrack7Action5.setBackground(colour);
-			sliderTrack7Action6.setBackground(colour);
-			sliderTrack7Action7.setBackground(colour);
-		} else if (track == 8){
-			panelTrack8.setBackground(colour);
-			sliderTrack8Action1.setBackground(colour);
-			sliderTrack8Action2.setBackground(colour);
-			sliderTrack8Action3.setBackground(colour);
-			sliderTrack8Action4.setBackground(colour);
-			sliderTrack8Action5.setBackground(colour);
-			sliderTrack8Action6.setBackground(colour);
-			sliderTrack8Action7.setBackground(colour);
-		} else if (track == 9){
-			panelTrack9.setBackground(colour);
-			sliderTrack9Action1.setBackground(colour);
-			sliderTrack9Action2.setBackground(colour);
-			sliderTrack9Action3.setBackground(colour);
-			sliderTrack9Action4.setBackground(colour);
-			sliderTrack9Action5.setBackground(colour);
-			sliderTrack9Action6.setBackground(colour);
-			sliderTrack9Action7.setBackground(colour);
-		} else if (track == 10){
-			panelTrack10.setBackground(colour);
-			sliderTrack10Action1.setBackground(colour);
-			sliderTrack10Action2.setBackground(colour);
-			sliderTrack10Action3.setBackground(colour);
-			sliderTrack10Action4.setBackground(colour);
-			sliderTrack10Action5.setBackground(colour);
-			sliderTrack10Action6.setBackground(colour);
-			sliderTrack10Action7.setBackground(colour);
-		} else if (track == 11){
-			panelTrack11.setBackground(colour);
-			sliderTrack11Action1.setBackground(colour);
-			sliderTrack11Action2.setBackground(colour);
-			sliderTrack11Action3.setBackground(colour);
-			sliderTrack11Action4.setBackground(colour);
-			sliderTrack11Action5.setBackground(colour);
-			sliderTrack11Action6.setBackground(colour);
-			sliderTrack11Action7.setBackground(colour);
-		} else if (track == 12){
-			panelTrack12.setBackground(colour);
-			sliderTrack12Action1.setBackground(colour);
-			sliderTrack12Action2.setBackground(colour);
-			sliderTrack12Action3.setBackground(colour);
-			sliderTrack12Action4.setBackground(colour);
-			sliderTrack12Action5.setBackground(colour);
-			sliderTrack12Action6.setBackground(colour);
-			sliderTrack12Action7.setBackground(colour);
-		} else if (track == 13){
-			panelTrack13.setBackground(colour);
-			sliderTrack13Action1.setBackground(colour);
-			sliderTrack13Action2.setBackground(colour);
-			sliderTrack13Action3.setBackground(colour);
-			sliderTrack13Action4.setBackground(colour);
-			sliderTrack13Action5.setBackground(colour);
-			sliderTrack13Action6.setBackground(colour);
-			sliderTrack13Action7.setBackground(colour);
-		} else if (track == 14){
-			panelTrack14.setBackground(colour);
-			sliderTrack14Action1.setBackground(colour);
-			sliderTrack14Action2.setBackground(colour);
-			sliderTrack14Action3.setBackground(colour);
-			sliderTrack14Action4.setBackground(colour);
-			sliderTrack14Action5.setBackground(colour);
-			sliderTrack14Action6.setBackground(colour);
-			sliderTrack14Action7.setBackground(colour);
-		} else if (track == 15){
-			panelTrack15.setBackground(colour);
-			sliderTrack15Action1.setBackground(colour);
-			sliderTrack15Action2.setBackground(colour);
-			sliderTrack15Action3.setBackground(colour);
-			sliderTrack15Action4.setBackground(colour);
-			sliderTrack15Action5.setBackground(colour);
-			sliderTrack15Action6.setBackground(colour);
-			sliderTrack15Action7.setBackground(colour);
-		} else if (track == 16){
-			panelTrack16.setBackground(colour);
-			sliderTrack16Action1.setBackground(colour);
-			sliderTrack16Action2.setBackground(colour);
-			sliderTrack16Action3.setBackground(colour);
-			sliderTrack16Action4.setBackground(colour);
-			sliderTrack16Action5.setBackground(colour);
-			sliderTrack16Action6.setBackground(colour);
-			sliderTrack16Action7.setBackground(colour); 
-		} else if (track == 17){
-			panelGlobal.setBackground(colour);
-			lblMasterVolume.setBackground(colour);
-			lblTapTempo.setBackground(colour);
-			lblTapTempoTap.setBackground(colour);
-			sliderGlobalAction1.setBackground(colour);
-			sliderGlobalAction2.setBackground(colour);
+	
+	/**
+	 * Setting the tracks background colour
+	 * @param aTrack - Track
+	 * @param aColour - Colour to be the background
+	 */
+	public static void setTrackColour(int aTrack, Color aColour){
+		if (aTrack == 1){
+			panelTrack1.setBackground(aColour);
+			sliderTrack1Action1.setBackground(aColour);
+			sliderTrack1Action2.setBackground(aColour);
+			sliderTrack1Action3.setBackground(aColour);
+			sliderTrack1Action4.setBackground(aColour);
+			sliderTrack1Action5.setBackground(aColour);
+			sliderTrack1Action6.setBackground(aColour);
+			sliderTrack1Action7.setBackground(aColour);
+		} else if (aTrack == 2){
+			panelTrack2.setBackground(aColour);
+			sliderTrack2Action1.setBackground(aColour);
+			sliderTrack2Action2.setBackground(aColour);
+			sliderTrack2Action3.setBackground(aColour);
+			sliderTrack2Action4.setBackground(aColour);
+			sliderTrack2Action5.setBackground(aColour);
+			sliderTrack2Action6.setBackground(aColour);
+			sliderTrack2Action7.setBackground(aColour);
+		} else if (aTrack == 3){
+			panelTrack3.setBackground(aColour);
+			sliderTrack3Action1.setBackground(aColour);
+			sliderTrack3Action2.setBackground(aColour);
+			sliderTrack3Action3.setBackground(aColour);
+			sliderTrack3Action4.setBackground(aColour);
+			sliderTrack3Action5.setBackground(aColour);
+			sliderTrack3Action6.setBackground(aColour);
+			sliderTrack3Action7.setBackground(aColour);
+		} else if (aTrack == 4){
+			panelTrack4.setBackground(aColour);
+			sliderTrack4Action1.setBackground(aColour);
+			sliderTrack4Action2.setBackground(aColour);
+			sliderTrack4Action3.setBackground(aColour);
+			sliderTrack4Action4.setBackground(aColour);
+			sliderTrack4Action5.setBackground(aColour);
+			sliderTrack4Action6.setBackground(aColour);
+			sliderTrack4Action7.setBackground(aColour);
+		} else if (aTrack == 5){
+			panelTrack5.setBackground(aColour);
+			sliderTrack5Action1.setBackground(aColour);
+			sliderTrack5Action2.setBackground(aColour);
+			sliderTrack5Action3.setBackground(aColour);
+			sliderTrack5Action4.setBackground(aColour);
+			sliderTrack5Action5.setBackground(aColour);
+			sliderTrack5Action6.setBackground(aColour);
+			sliderTrack5Action7.setBackground(aColour);
+		} else if (aTrack == 6){
+			panelTrack6.setBackground(aColour);
+			sliderTrack6Action1.setBackground(aColour);
+			sliderTrack6Action2.setBackground(aColour);
+			sliderTrack6Action3.setBackground(aColour);
+			sliderTrack6Action4.setBackground(aColour);
+			sliderTrack6Action5.setBackground(aColour);
+			sliderTrack6Action6.setBackground(aColour);
+			sliderTrack6Action7.setBackground(aColour);
+		} else if (aTrack == 7){
+			panelTrack7.setBackground(aColour);
+			sliderTrack7Action1.setBackground(aColour);
+			sliderTrack7Action2.setBackground(aColour);
+			sliderTrack7Action3.setBackground(aColour);
+			sliderTrack7Action4.setBackground(aColour);
+			sliderTrack7Action5.setBackground(aColour);
+			sliderTrack7Action6.setBackground(aColour);
+			sliderTrack7Action7.setBackground(aColour);
+		} else if (aTrack == 8){
+			panelTrack8.setBackground(aColour);
+			sliderTrack8Action1.setBackground(aColour);
+			sliderTrack8Action2.setBackground(aColour);
+			sliderTrack8Action3.setBackground(aColour);
+			sliderTrack8Action4.setBackground(aColour);
+			sliderTrack8Action5.setBackground(aColour);
+			sliderTrack8Action6.setBackground(aColour);
+			sliderTrack8Action7.setBackground(aColour);
+		} else if (aTrack == 9){
+			panelTrack9.setBackground(aColour);
+			sliderTrack9Action1.setBackground(aColour);
+			sliderTrack9Action2.setBackground(aColour);
+			sliderTrack9Action3.setBackground(aColour);
+			sliderTrack9Action4.setBackground(aColour);
+			sliderTrack9Action5.setBackground(aColour);
+			sliderTrack9Action6.setBackground(aColour);
+			sliderTrack9Action7.setBackground(aColour);
+		} else if (aTrack == 10){
+			panelTrack10.setBackground(aColour);
+			sliderTrack10Action1.setBackground(aColour);
+			sliderTrack10Action2.setBackground(aColour);
+			sliderTrack10Action3.setBackground(aColour);
+			sliderTrack10Action4.setBackground(aColour);
+			sliderTrack10Action5.setBackground(aColour);
+			sliderTrack10Action6.setBackground(aColour);
+			sliderTrack10Action7.setBackground(aColour);
+		} else if (aTrack == 11){
+			panelTrack11.setBackground(aColour);
+			sliderTrack11Action1.setBackground(aColour);
+			sliderTrack11Action2.setBackground(aColour);
+			sliderTrack11Action3.setBackground(aColour);
+			sliderTrack11Action4.setBackground(aColour);
+			sliderTrack11Action5.setBackground(aColour);
+			sliderTrack11Action6.setBackground(aColour);
+			sliderTrack11Action7.setBackground(aColour);
+		} else if (aTrack == 12){
+			panelTrack12.setBackground(aColour);
+			sliderTrack12Action1.setBackground(aColour);
+			sliderTrack12Action2.setBackground(aColour);
+			sliderTrack12Action3.setBackground(aColour);
+			sliderTrack12Action4.setBackground(aColour);
+			sliderTrack12Action5.setBackground(aColour);
+			sliderTrack12Action6.setBackground(aColour);
+			sliderTrack12Action7.setBackground(aColour);
+		} else if (aTrack == 13){
+			panelTrack13.setBackground(aColour);
+			sliderTrack13Action1.setBackground(aColour);
+			sliderTrack13Action2.setBackground(aColour);
+			sliderTrack13Action3.setBackground(aColour);
+			sliderTrack13Action4.setBackground(aColour);
+			sliderTrack13Action5.setBackground(aColour);
+			sliderTrack13Action6.setBackground(aColour);
+			sliderTrack13Action7.setBackground(aColour);
+		} else if (aTrack == 14){
+			panelTrack14.setBackground(aColour);
+			sliderTrack14Action1.setBackground(aColour);
+			sliderTrack14Action2.setBackground(aColour);
+			sliderTrack14Action3.setBackground(aColour);
+			sliderTrack14Action4.setBackground(aColour);
+			sliderTrack14Action5.setBackground(aColour);
+			sliderTrack14Action6.setBackground(aColour);
+			sliderTrack14Action7.setBackground(aColour);
+		} else if (aTrack == 15){
+			panelTrack15.setBackground(aColour);
+			sliderTrack15Action1.setBackground(aColour);
+			sliderTrack15Action2.setBackground(aColour);
+			sliderTrack15Action3.setBackground(aColour);
+			sliderTrack15Action4.setBackground(aColour);
+			sliderTrack15Action5.setBackground(aColour);
+			sliderTrack15Action6.setBackground(aColour);
+			sliderTrack15Action7.setBackground(aColour);
+		} else if (aTrack == 16){
+			panelTrack16.setBackground(aColour);
+			sliderTrack16Action1.setBackground(aColour);
+			sliderTrack16Action2.setBackground(aColour);
+			sliderTrack16Action3.setBackground(aColour);
+			sliderTrack16Action4.setBackground(aColour);
+			sliderTrack16Action5.setBackground(aColour);
+			sliderTrack16Action6.setBackground(aColour);
+			sliderTrack16Action7.setBackground(aColour); 
+		} else if (aTrack == 17){
+			panelGlobal.setBackground(aColour);
+			lblMasterVolume.setBackground(aColour);
+			lblTapTempo.setBackground(aColour);
+			lblTapTempoTap.setBackground(aColour);
+			sliderGlobalAction1.setBackground(aColour);
+			sliderGlobalAction2.setBackground(aColour);
 
 
 		}
 	}
-
+	
+	/**
+	 * Getting the current tap tempo tap value
+	 * @return Get tap tempo value
+	 */
 	public static int getTapTempoValue() {
 		return	Integer.valueOf(cbTapTempoTap.getSelectedItem().toString());
 	}
-
-	public void openDialog(int a, int b){
+	
+	/**
+	 * Open the dialog to change the command configuration
+	 * @param aTrack - Track
+	 * @param aSlot - Slider slot
+	 */
+	public void openDialog(int aTrack, int aSlot){
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InputDialog window = new InputDialog(a, b);
+					InputDialog window = new InputDialog(aTrack, aSlot);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -5607,512 +5667,518 @@ public class MainGUI extends JFrame implements ActionListener {
 			}
 		});
 	}
-
-	public static void setActionData(int track, int action, Command command){
-		if (track == getSelectedTrack()){
-			LeapMotionListener.setData(command);
+	
+	/**
+	 * Setting the action data and replacing the command within the table
+	 * @param aTrack - Track
+	 * @param aColour - Colour to be the background
+	 * @param aCommand - The command to replace the old one
+	 */
+	public static void setActionData(int aTrack, int aAction, Command aCommand){
+		if (aTrack == getSelectedTrack()){
+			LeapMotionListener.setData(aCommand);
 		}
-		if (track == 1){
-			if (action == 0){
-				lblTrack1Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack1Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack1Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack1Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack1Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack1Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack1Action7.setText(command.getCommand());
+		if (aTrack == 1){
+			if (aAction == 0){
+				lblTrack1Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack1Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack1Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack1Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack1Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack1Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack1Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 2){
-			if (action == 0){
-				lblTrack2Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack2Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack2Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack2Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack2Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack2Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack2Action7.setText(command.getCommand());
+		} else if (aTrack == 2){
+			if (aAction == 0){
+				lblTrack2Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack2Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack2Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack2Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack2Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack2Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack2Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 3){
-			if (action == 0){
-				lblTrack3Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack3Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack3Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack3Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack3Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack3Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack3Action7.setText(command.getCommand());
+		} else if (aTrack == 3){
+			if (aAction == 0){
+				lblTrack3Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack3Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack3Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack3Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack3Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack3Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack3Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 4){
-			if (action == 0){
-				lblTrack4Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack4Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack4Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack4Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack4Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack4Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack4Action7.setText(command.getCommand());
+		} else if (aTrack == 4){
+			if (aAction == 0){
+				lblTrack4Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack4Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack4Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack4Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack4Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack4Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack4Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 5){
-			if (action == 0){
-				lblTrack5Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack5Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack5Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack5Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack5Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack5Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack5Action7.setText(command.getCommand());
+		} else if (aTrack == 5){
+			if (aAction == 0){
+				lblTrack5Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack5Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack5Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack5Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack5Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack5Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack5Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 6){
-			if (action == 0){
-				lblTrack6Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack6Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack6Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack6Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack6Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack6Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack6Action7.setText(command.getCommand());
+		} else if (aTrack == 6){
+			if (aAction == 0){
+				lblTrack6Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack6Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack6Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack6Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack6Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack6Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack6Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 7){
-			if (action == 0){
-				lblTrack7Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack7Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack7Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack7Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack7Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack7Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack7Action7.setText(command.getCommand());
+		} else if (aTrack == 7){
+			if (aAction == 0){
+				lblTrack7Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack7Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack7Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack7Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack7Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack7Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack7Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 8){
-			if (action == 0){
-				lblTrack8Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack8Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack8Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack8Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack8Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack8Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack8Action7.setText(command.getCommand());
+		} else if (aTrack == 8){
+			if (aAction == 0){
+				lblTrack8Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack8Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack8Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack8Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack8Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack8Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack8Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 9){
-			if (action == 0){
-				lblTrack9Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack9Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack9Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack9Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack9Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack9Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack9Action7.setText(command.getCommand());
+		} else if (aTrack == 9){
+			if (aAction == 0){
+				lblTrack9Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack9Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack9Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack9Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack9Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack9Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack9Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 10){
-			if (action == 0){
-				lblTrack10Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack10Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack10Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack10Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack10Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack10Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack10Action7.setText(command.getCommand());
+		} else if (aTrack == 10){
+			if (aAction == 0){
+				lblTrack10Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack10Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack10Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack10Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack10Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack10Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack10Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 11){
-			if (action == 0){
-				lblTrack11Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack11Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack11Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack11Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack11Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack11Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack11Action7.setText(command.getCommand());
+		} else if (aTrack == 11){
+			if (aAction == 0){
+				lblTrack11Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack11Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack11Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack11Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack11Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack11Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack11Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 12){
-			if (action == 0){
-				lblTrack12Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack12Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack12Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack12Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack12Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack12Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack12Action7.setText(command.getCommand());
+		} else if (aTrack == 12){
+			if (aAction == 0){
+				lblTrack12Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack12Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack12Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack12Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack12Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack12Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack12Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 13){
-			if (action == 0){
-				lblTrack13Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack13Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack13Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack13Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack13Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack13Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack13Action7.setText(command.getCommand());
+		} else if (aTrack == 13){
+			if (aAction == 0){
+				lblTrack13Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack13Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack13Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack13Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack13Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack13Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack13Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 14){
-			if (action == 0){
-				lblTrack14Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack14Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack14Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack14Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack14Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack14Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack14Action7.setText(command.getCommand());
+		} else if (aTrack == 14){
+			if (aAction == 0){
+				lblTrack14Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack14Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack14Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack14Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack14Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack14Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack14Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 15){
-			if (action == 0){
-				lblTrack15Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack15Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack15Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack15Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack15Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack15Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack15Action7.setText(command.getCommand());
+		} else if (aTrack == 15){
+			if (aAction == 0){
+				lblTrack15Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack15Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack15Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack15Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack15Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack15Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack15Action7.setText(aCommand.getCommand());
 			}
-		} else if (track == 16){
-			if (action == 0){
-				lblTrack16Action1.setText(command.getCommand());
-			} else if (action == 1){
-				lblTrack16Action2.setText(command.getCommand());
-			} else if (action == 2){
-				lblTrack16Action3.setText(command.getCommand());
-			} else if (action == 3){
-				lblTrack16Action4.setText(command.getCommand());
-			} else if (action == 4){
-				lblTrack16Action5.setText(command.getCommand());
-			} else if (action == 5){
-				lblTrack16Action6.setText(command.getCommand());
-			} else if (action == 6){
-				lblTrack16Action7.setText(command.getCommand());
+		} else if (aTrack == 16){
+			if (aAction == 0){
+				lblTrack16Action1.setText(aCommand.getCommand());
+			} else if (aAction == 1){
+				lblTrack16Action2.setText(aCommand.getCommand());
+			} else if (aAction == 2){
+				lblTrack16Action3.setText(aCommand.getCommand());
+			} else if (aAction == 3){
+				lblTrack16Action4.setText(aCommand.getCommand());
+			} else if (aAction == 4){
+				lblTrack16Action5.setText(aCommand.getCommand());
+			} else if (aAction == 5){
+				lblTrack16Action6.setText(aCommand.getCommand());
+			} else if (aAction == 6){
+				lblTrack16Action7.setText(aCommand.getCommand());
 			}
 		}
 
-		settings.replaceCommand(track, action, command);
+		settings.replaceCommand(aTrack, aAction, aCommand);
 	}
+	
+	/**
+	 * Setting up the pre-programmed table if there is no previous user settings
+	 * @param aMainTable - Table object
+	 */
+	public static void setUpTableData(List<Command> aMainTable){
 
-	public static void setUpTableData(List<Command> mainTableData){
+		System.out.println("Table size: " + aMainTable.size());
 
-
-		System.out.println("Table size: " + mainTableData.size());
-
-		for (int i = 0; i < mainTableData.size(); i++){
+		for (int i = 0; i < aMainTable.size(); i++){
 
 			switch (i) {
-			case 0:  lblTrack1Action1.setText(mainTableData.get(i).getCommand());
+			case 0:  lblTrack1Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 1:  lblTrack1Action2.setText(mainTableData.get(i).getCommand());
+			case 1:  lblTrack1Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 2:  lblTrack1Action3.setText(mainTableData.get(i).getCommand());
+			case 2:  lblTrack1Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 3:  lblTrack1Action4.setText(mainTableData.get(i).getCommand());
+			case 3:  lblTrack1Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 4:  lblTrack1Action5.setText(mainTableData.get(i).getCommand());
+			case 4:  lblTrack1Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 5:  lblTrack1Action6.setText(mainTableData.get(i).getCommand());
+			case 5:  lblTrack1Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 6:  lblTrack1Action7.setText(mainTableData.get(i).getCommand());
+			case 6:  lblTrack1Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 7:  lblTrack2Action1.setText(mainTableData.get(i).getCommand());
+			case 7:  lblTrack2Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 8:  lblTrack2Action2.setText(mainTableData.get(i).getCommand());
+			case 8:  lblTrack2Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 9:  lblTrack2Action3.setText(mainTableData.get(i).getCommand());
+			case 9:  lblTrack2Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 10: lblTrack2Action4.setText(mainTableData.get(i).getCommand());
+			case 10: lblTrack2Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 11: lblTrack2Action5.setText(mainTableData.get(i).getCommand());
+			case 11: lblTrack2Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 12: lblTrack2Action6.setText(mainTableData.get(i).getCommand());
+			case 12: lblTrack2Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 13: lblTrack2Action7.setText(mainTableData.get(i).getCommand());
+			case 13: lblTrack2Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 14:  lblTrack3Action1.setText(mainTableData.get(i).getCommand());
+			case 14:  lblTrack3Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 15:  lblTrack3Action2.setText(mainTableData.get(i).getCommand());
+			case 15:  lblTrack3Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 16:  lblTrack3Action3.setText(mainTableData.get(i).getCommand());
+			case 16:  lblTrack3Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 17:  lblTrack3Action4.setText(mainTableData.get(i).getCommand());
+			case 17:  lblTrack3Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 18:  lblTrack3Action5.setText(mainTableData.get(i).getCommand());
+			case 18:  lblTrack3Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 19:  lblTrack3Action6.setText(mainTableData.get(i).getCommand());
+			case 19:  lblTrack3Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 20:  lblTrack3Action7.setText(mainTableData.get(i).getCommand());
+			case 20:  lblTrack3Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 21:  lblTrack4Action1.setText(mainTableData.get(i).getCommand());
+			case 21:  lblTrack4Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 22:  lblTrack4Action2.setText(mainTableData.get(i).getCommand());
+			case 22:  lblTrack4Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 23:  lblTrack4Action3.setText(mainTableData.get(i).getCommand());
+			case 23:  lblTrack4Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 24: lblTrack4Action4.setText(mainTableData.get(i).getCommand());
+			case 24: lblTrack4Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 25: lblTrack4Action5.setText(mainTableData.get(i).getCommand());
+			case 25: lblTrack4Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 26: lblTrack4Action6.setText(mainTableData.get(i).getCommand());
+			case 26: lblTrack4Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 27: lblTrack4Action7.setText(mainTableData.get(i).getCommand());
+			case 27: lblTrack4Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 28:  lblTrack5Action1.setText(mainTableData.get(i).getCommand());
+			case 28:  lblTrack5Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 29:  lblTrack5Action2.setText(mainTableData.get(i).getCommand());
+			case 29:  lblTrack5Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 30:  lblTrack5Action3.setText(mainTableData.get(i).getCommand());
+			case 30:  lblTrack5Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 31:  lblTrack5Action4.setText(mainTableData.get(i).getCommand());
+			case 31:  lblTrack5Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 32:  lblTrack5Action5.setText(mainTableData.get(i).getCommand());
+			case 32:  lblTrack5Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 33:  lblTrack5Action6.setText(mainTableData.get(i).getCommand());
+			case 33:  lblTrack5Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 34:  lblTrack5Action7.setText(mainTableData.get(i).getCommand());
+			case 34:  lblTrack5Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 35:  lblTrack6Action1.setText(mainTableData.get(i).getCommand());
+			case 35:  lblTrack6Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 36:  lblTrack6Action2.setText(mainTableData.get(i).getCommand());
+			case 36:  lblTrack6Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 37:  lblTrack6Action3.setText(mainTableData.get(i).getCommand());
+			case 37:  lblTrack6Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 38: lblTrack6Action4.setText(mainTableData.get(i).getCommand());
+			case 38: lblTrack6Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 39: lblTrack6Action5.setText(mainTableData.get(i).getCommand());
+			case 39: lblTrack6Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 40: lblTrack6Action6.setText(mainTableData.get(i).getCommand());
+			case 40: lblTrack6Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 41: lblTrack6Action7.setText(mainTableData.get(i).getCommand());
+			case 41: lblTrack6Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 42:  lblTrack7Action1.setText(mainTableData.get(i).getCommand());
+			case 42:  lblTrack7Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 43:  lblTrack7Action2.setText(mainTableData.get(i).getCommand());
+			case 43:  lblTrack7Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 44:  lblTrack7Action3.setText(mainTableData.get(i).getCommand());
+			case 44:  lblTrack7Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 45: lblTrack7Action4.setText(mainTableData.get(i).getCommand());
+			case 45: lblTrack7Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 46: lblTrack7Action5.setText(mainTableData.get(i).getCommand());
+			case 46: lblTrack7Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 47: lblTrack7Action6.setText(mainTableData.get(i).getCommand());
+			case 47: lblTrack7Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 48: lblTrack7Action7.setText(mainTableData.get(i).getCommand());
+			case 48: lblTrack7Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 49:  lblTrack8Action1.setText(mainTableData.get(i).getCommand());
+			case 49:  lblTrack8Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 50:  lblTrack8Action2.setText(mainTableData.get(i).getCommand());
+			case 50:  lblTrack8Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 51:  lblTrack8Action3.setText(mainTableData.get(i).getCommand());
+			case 51:  lblTrack8Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 52: lblTrack8Action4.setText(mainTableData.get(i).getCommand());
+			case 52: lblTrack8Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 53: lblTrack8Action5.setText(mainTableData.get(i).getCommand());
+			case 53: lblTrack8Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 54: lblTrack8Action6.setText(mainTableData.get(i).getCommand());
+			case 54: lblTrack8Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 55: lblTrack8Action7.setText(mainTableData.get(i).getCommand());
+			case 55: lblTrack8Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 56:  lblTrack9Action1.setText(mainTableData.get(i).getCommand());
+			case 56:  lblTrack9Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 57:  lblTrack9Action2.setText(mainTableData.get(i).getCommand());
+			case 57:  lblTrack9Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 58:  lblTrack9Action3.setText(mainTableData.get(i).getCommand());
+			case 58:  lblTrack9Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 59: lblTrack9Action4.setText(mainTableData.get(i).getCommand());
+			case 59: lblTrack9Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 60: lblTrack9Action5.setText(mainTableData.get(i).getCommand());
+			case 60: lblTrack9Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 61: lblTrack9Action6.setText(mainTableData.get(i).getCommand());
+			case 61: lblTrack9Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 62: lblTrack9Action7.setText(mainTableData.get(i).getCommand());
+			case 62: lblTrack9Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 63:  lblTrack10Action1.setText(mainTableData.get(i).getCommand());
+			case 63:  lblTrack10Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 64:  lblTrack10Action2.setText(mainTableData.get(i).getCommand());
+			case 64:  lblTrack10Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 65:  lblTrack10Action3.setText(mainTableData.get(i).getCommand());
+			case 65:  lblTrack10Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 66: lblTrack10Action4.setText(mainTableData.get(i).getCommand());
+			case 66: lblTrack10Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 67: lblTrack10Action5.setText(mainTableData.get(i).getCommand());
+			case 67: lblTrack10Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 68: lblTrack10Action6.setText(mainTableData.get(i).getCommand());
+			case 68: lblTrack10Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 69: lblTrack10Action7.setText(mainTableData.get(i).getCommand());
+			case 69: lblTrack10Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 70:  lblTrack11Action1.setText(mainTableData.get(i).getCommand());
+			case 70:  lblTrack11Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 71:  lblTrack11Action2.setText(mainTableData.get(i).getCommand());
+			case 71:  lblTrack11Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 72:  lblTrack11Action3.setText(mainTableData.get(i).getCommand());
+			case 72:  lblTrack11Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 73: lblTrack11Action4.setText(mainTableData.get(i).getCommand());
+			case 73: lblTrack11Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 74: lblTrack11Action5.setText(mainTableData.get(i).getCommand());
+			case 74: lblTrack11Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 75: lblTrack11Action6.setText(mainTableData.get(i).getCommand());
+			case 75: lblTrack11Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 76: lblTrack11Action7.setText(mainTableData.get(i).getCommand());
+			case 76: lblTrack11Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 77:  lblTrack12Action1.setText(mainTableData.get(i).getCommand());
+			case 77:  lblTrack12Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 78:  lblTrack12Action2.setText(mainTableData.get(i).getCommand());
+			case 78:  lblTrack12Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 79:  lblTrack12Action3.setText(mainTableData.get(i).getCommand());
+			case 79:  lblTrack12Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 80: lblTrack12Action4.setText(mainTableData.get(i).getCommand());
+			case 80: lblTrack12Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 81: lblTrack12Action5.setText(mainTableData.get(i).getCommand());
+			case 81: lblTrack12Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 82: lblTrack12Action6.setText(mainTableData.get(i).getCommand());
+			case 82: lblTrack12Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 83: lblTrack12Action7.setText(mainTableData.get(i).getCommand());
+			case 83: lblTrack12Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 84:  lblTrack13Action1.setText(mainTableData.get(i).getCommand());
+			case 84:  lblTrack13Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 85:  lblTrack13Action2.setText(mainTableData.get(i).getCommand());
+			case 85:  lblTrack13Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 86:  lblTrack13Action3.setText(mainTableData.get(i).getCommand());
+			case 86:  lblTrack13Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 87: lblTrack13Action4.setText(mainTableData.get(i).getCommand());
+			case 87: lblTrack13Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 88: lblTrack13Action5.setText(mainTableData.get(i).getCommand());
+			case 88: lblTrack13Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 89: lblTrack13Action6.setText(mainTableData.get(i).getCommand());
+			case 89: lblTrack13Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 90: lblTrack13Action7.setText(mainTableData.get(i).getCommand());
+			case 90: lblTrack13Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 91:  lblTrack14Action1.setText(mainTableData.get(i).getCommand());
+			case 91:  lblTrack14Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 92:  lblTrack14Action2.setText(mainTableData.get(i).getCommand());
+			case 92:  lblTrack14Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 93:  lblTrack14Action3.setText(mainTableData.get(i).getCommand());
+			case 93:  lblTrack14Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 94: lblTrack14Action4.setText(mainTableData.get(i).getCommand());
+			case 94: lblTrack14Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 95: lblTrack14Action5.setText(mainTableData.get(i).getCommand());
+			case 95: lblTrack14Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 96: lblTrack14Action6.setText(mainTableData.get(i).getCommand());
+			case 96: lblTrack14Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 97: lblTrack14Action7.setText(mainTableData.get(i).getCommand());
+			case 97: lblTrack14Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 98:  lblTrack15Action1.setText(mainTableData.get(i).getCommand());
+			case 98:  lblTrack15Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 99:  lblTrack15Action2.setText(mainTableData.get(i).getCommand());
+			case 99:  lblTrack15Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 100:  lblTrack15Action3.setText(mainTableData.get(i).getCommand());
+			case 100:  lblTrack15Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 101: lblTrack15Action4.setText(mainTableData.get(i).getCommand());
+			case 101: lblTrack15Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 102: lblTrack15Action5.setText(mainTableData.get(i).getCommand());
+			case 102: lblTrack15Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 103: lblTrack15Action6.setText(mainTableData.get(i).getCommand());
+			case 103: lblTrack15Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 104: lblTrack15Action7.setText(mainTableData.get(i).getCommand());
+			case 104: lblTrack15Action7.setText(aMainTable.get(i).getCommand());
 			break;
-			case 105:  lblTrack16Action1.setText(mainTableData.get(i).getCommand());
+			case 105:  lblTrack16Action1.setText(aMainTable.get(i).getCommand());
 			break;
-			case 106:  lblTrack16Action2.setText(mainTableData.get(i).getCommand());
+			case 106:  lblTrack16Action2.setText(aMainTable.get(i).getCommand());
 			break;
-			case 107:  lblTrack16Action3.setText(mainTableData.get(i).getCommand());
+			case 107:  lblTrack16Action3.setText(aMainTable.get(i).getCommand());
 			break;
-			case 108: lblTrack16Action4.setText(mainTableData.get(i).getCommand());
+			case 108: lblTrack16Action4.setText(aMainTable.get(i).getCommand());
 			break;
-			case 109: lblTrack16Action5.setText(mainTableData.get(i).getCommand());
+			case 109: lblTrack16Action5.setText(aMainTable.get(i).getCommand());
 			break;
-			case 110: lblTrack16Action6.setText(mainTableData.get(i).getCommand());
+			case 110: lblTrack16Action6.setText(aMainTable.get(i).getCommand());
 			break;
-			case 111: lblTrack16Action7.setText(mainTableData.get(i).getCommand());
+			case 111: lblTrack16Action7.setText(aMainTable.get(i).getCommand());
 			break;
 			default:
 				break;
 
 			}
-
-
 		}
 	}
-
 }
 

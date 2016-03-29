@@ -52,7 +52,7 @@ public class GestureHandler {
 					if (previousValue == 0){
 						if (firstCommand == 1){
 							firstCommand = 0;
-							MainGUI.logMessage("Sending tap tempo command");
+							MainGUI.logMessage("Tap tempo command");
 							MIDIAddress midiAddress = new MIDIAddress(MainGUI.getSelectedTrack(), 2, 15);
 							midiInterface.sendMessage(midiAddress, 50);
 						}
