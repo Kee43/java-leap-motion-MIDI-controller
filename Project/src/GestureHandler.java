@@ -42,33 +42,32 @@ public class GestureHandler {
 
 		interfaceHandler.setSliderData(aTrack, aAction, value, aAxisIndex);
 
-		if (aCC != 0){
-			if (aTrack == 17 && aAction == 2){
-				MIDIAddress midiAddress = new MIDIAddress(aTrack, 1, aCC);
-				midiInterface.sendMessage(midiAddress, value);
-			} 
-			else if (aTrack == 17 && aAction == 3){
-				if (value == 0){
-					if (previousValue == 0){
-						if (firstCommand == 1){
-							firstCommand = 0;
-							MainGUI.logMessage("Tap tempo command");
-							MIDIAddress midiAddress = new MIDIAddress(MainGUI.getSelectedTrack(), 2, 15);
-							midiInterface.sendMessage(midiAddress, 50);
-						}
+		if (aTrack == 17 && aAction == 2){
+			MIDIAddress midiAddress = new MIDIAddress(aTrack, 1, aCC);
+			midiInterface.sendMessage(midiAddress, value);
+		} 
+		else if (aTrack == 17 && aAction == 3){
+			if (value == 0){
+				if (previousValue == 0){
+					if (firstCommand == 1){
+						firstCommand = 0;
+						MainGUI.logMessage("Tap tempo command");
+						MIDIAddress midiAddress = new MIDIAddress(MainGUI.getSelectedTrack(), 1, 15);
+						midiInterface.sendMessage(midiAddress, 50);
 					}
-				} else {
-					firstCommand = 1;
 				}
-				previousValue = value;
+			} else {
+				firstCommand = 1;
 			}
+			previousValue = value;
+
 		} else {
 			MIDIAddress midiAddress = new MIDIAddress(MainGUI.getSelectedTrack(), MainGUI.getSelectedTrackChannel(), aCC);
 			midiInterface.sendMessage(midiAddress, value);
+			previousValue = value;
 		}
-		previousValue = value;
 	}
-
+	
 	/**
 	 * Generating the new vector value based on the set minimum and maximum values (x axis)
 	 * 
