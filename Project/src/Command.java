@@ -80,6 +80,10 @@ public class Command implements Serializable {
 	public int getCC() {
 		return cc;
 	}
+	
+	public int setCC(int aCC) {
+		return this.cc = aCC;
+	}
 
 	public String getMin() {
 		return min;

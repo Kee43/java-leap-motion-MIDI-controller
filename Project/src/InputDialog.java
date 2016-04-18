@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JComboBox;
@@ -109,12 +111,15 @@ public class InputDialog implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		System.out.println(selectedTrack);
 		if (event.getSource().equals(btnAdd)){
 
 			Command command = new Command(selectedTrack, cbActions.getSelectedItem().toString(), cbActions.getSelectedIndex(), cbAxis.getSelectedItem().toString(), cbMin.getSelectedItem().toString(), cbMax.getSelectedItem().toString());
-			System.out.println(selectedTrack);
-			MainGUI.setActionData(selectedTrack, selectedSlot, command);
+			try {
+				MainGUI.setActionData(selectedTrack, selectedSlot, command);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			frame.dispose();
 		}
 	}

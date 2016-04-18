@@ -366,8 +366,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack1.add(lblChannelaxisTrack1);
 
 		sliderTrack1Action1 = new JSlider();
-		sliderTrack1Action1.setOpaque(false);
-		sliderTrack1Action1.setForeground(Color.WHITE);
 		sliderTrack1Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack1Action1.setBounds(12, 67, 187, 15);
 		panelTrack1.add(sliderTrack1Action1);
@@ -555,7 +553,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack2.add(lblChannelaxisTrack2);
 
 		sliderTrack2Action1 = new JSlider();
-		sliderTrack2Action1.setOpaque(false);
 		sliderTrack2Action1.setForeground(Color.WHITE);
 		sliderTrack2Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack2Action1.setBounds(12, 67, 187, 15);
@@ -734,7 +731,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack3.add(lblChannelaxisTrack3);
 
 		sliderTrack3Action1 = new JSlider();
-		sliderTrack3Action1.setOpaque(false);
 		sliderTrack3Action1.setForeground(Color.WHITE);
 		sliderTrack3Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack3Action1.setBounds(12, 67, 187, 15);
@@ -915,7 +911,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack4.add(lblChannelaxisTrack4);
 
 		sliderTrack4Action1 = new JSlider();
-		sliderTrack4Action1.setOpaque(false);
 		sliderTrack4Action1.setForeground(Color.WHITE);
 		sliderTrack4Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack4Action1.setBounds(12, 67, 187, 15);
@@ -1095,7 +1090,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack5.add(lblChannelaxisTrack5);
 
 		sliderTrack5Action1 = new JSlider();
-		sliderTrack5Action1.setOpaque(false);
 		sliderTrack5Action1.setForeground(Color.WHITE);
 		sliderTrack5Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack5Action1.setBounds(12, 67, 187, 15);
@@ -1275,7 +1269,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack6.add(lblChannelaxisTrack6);
 
 		sliderTrack6Action1 = new JSlider();
-		sliderTrack6Action1.setOpaque(false);
 		sliderTrack6Action1.setForeground(Color.WHITE);
 		sliderTrack6Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack6Action1.setBounds(12, 67, 187, 15);
@@ -1456,7 +1449,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack7.add(lblChannelaxisTrack7);
 
 		sliderTrack7Action1 = new JSlider();
-		sliderTrack7Action1.setOpaque(false);
 		sliderTrack7Action1.setForeground(Color.WHITE);
 		sliderTrack7Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack7Action1.setBounds(12, 67, 187, 15);
@@ -1636,7 +1628,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack8.add(lblChannelaxisTrack8);
 
 		sliderTrack8Action1 = new JSlider();
-		sliderTrack8Action1.setOpaque(false);
 		sliderTrack8Action1.setForeground(Color.WHITE);
 		sliderTrack8Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack8Action1.setBounds(12, 67, 187, 15);
@@ -1816,7 +1807,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack9.add(lblChannelaxisTrack9);
 
 		sliderTrack9Action1 = new JSlider();
-		sliderTrack9Action1.setOpaque(false);
 		sliderTrack9Action1.setForeground(Color.WHITE);
 		sliderTrack9Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack9Action1.setBounds(12, 67, 187, 15);
@@ -1996,7 +1986,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack10.add(lblChannelaxisTrack10);
 
 		sliderTrack10Action1 = new JSlider();
-		sliderTrack10Action1.setOpaque(false);
 		sliderTrack10Action1.setForeground(Color.WHITE);
 		sliderTrack10Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack10Action1.setBounds(12, 67, 187, 15);
@@ -2176,7 +2165,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack11.add(lblChannelaxisTrack11);
 
 		sliderTrack11Action1 = new JSlider();
-		sliderTrack11Action1.setOpaque(false);
 		sliderTrack11Action1.setForeground(Color.WHITE);
 		sliderTrack11Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack11Action1.setBounds(12, 67, 187, 15);
@@ -2356,7 +2344,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack12.add(lblChannelaxisTrack12);
 
 		sliderTrack12Action1 = new JSlider();
-		sliderTrack12Action1.setOpaque(false);
 		sliderTrack12Action1.setForeground(Color.WHITE);
 		sliderTrack12Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack12Action1.setBounds(12, 67, 187, 15);
@@ -2536,7 +2523,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack13.add(lblChannelaxisTrack13);
 
 		sliderTrack13Action1 = new JSlider();
-		sliderTrack13Action1.setOpaque(false);
 		sliderTrack13Action1.setForeground(Color.WHITE);
 		sliderTrack13Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack13Action1.setBounds(12, 67, 187, 15);
@@ -2716,7 +2702,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack14.add(lblChannelaxisTrack14);
 
 		sliderTrack14Action1 = new JSlider();
-		sliderTrack14Action1.setOpaque(false);
 		sliderTrack14Action1.setForeground(Color.WHITE);
 		sliderTrack14Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack14Action1.setBounds(12, 67, 187, 15);
@@ -2896,7 +2881,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack15.add(lblChannelaxisTrack15);
 
 		sliderTrack15Action1 = new JSlider();
-		sliderTrack15Action1.setOpaque(false);
 		sliderTrack15Action1.setForeground(Color.WHITE);
 		sliderTrack15Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack15Action1.setBounds(12, 67, 187, 15);
@@ -3076,7 +3060,6 @@ public class MainGUI extends JFrame implements ActionListener {
 		panelTrack16.add(lblChannelaxisTrack16);
 
 		sliderTrack16Action1 = new JSlider();
-		sliderTrack16Action1.setOpaque(false);
 		sliderTrack16Action1.setForeground(Color.WHITE);
 		sliderTrack16Action1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		sliderTrack16Action1.setBounds(12, 67, 187, 15);
@@ -3294,7 +3277,7 @@ public class MainGUI extends JFrame implements ActionListener {
 		sliderGlobalAction2 = new JSlider();
 		sliderGlobalAction2.setOrientation(SwingConstants.VERTICAL);
 		sliderGlobalAction2.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		sliderGlobalAction2.setBounds(8, 264, 35, 176);
+		sliderGlobalAction2.setBounds(20, 270, 15, 175);
 		panelGlobal.add(sliderGlobalAction2);
 
 		lblTapTempoTap = new JLabel("Tap");
@@ -3353,7 +3336,7 @@ public class MainGUI extends JFrame implements ActionListener {
 		sliderGlobalAction1 = new JSlider();
 		sliderGlobalAction1.setOrientation(SwingConstants.VERTICAL);
 		sliderGlobalAction1.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		sliderGlobalAction1.setBounds(8, 63, 35, 174);
+		sliderGlobalAction1.setBounds(20, 60, 15, 174);
 		panelGlobal.add(sliderGlobalAction1);
 
 		cbGlobalAction1Min = new JComboBox(Strings.getMinMax());
@@ -3683,15 +3666,16 @@ public class MainGUI extends JFrame implements ActionListener {
 				openDialog(2, 5);
 			}
 		}
-		if (aEvent.getSource().equals(btnOpenTrack3Action7)){
-			if (btnOpenTrack3Action7.getText() == "-"){
-				btnOpenTrack3Action7.setText("+");
-				lblTrack3Action7.setVisible(false);
-				sliderTrack3Action7.setVisible(false);
+		
+		if (aEvent.getSource().equals(btnOpenTrack2Action7)){
+			if (btnOpenTrack2Action7.getText() == "-"){
+				btnOpenTrack2Action7.setText("+");
+				lblTrack2Action7.setVisible(false);
+				sliderTrack2Action7.setVisible(false);
 			} else {
-				btnOpenTrack3Action7.setText("-");
-				lblTrack3Action7.setVisible(true);
-				sliderTrack3Action7.setVisible(true);
+				btnOpenTrack2Action7.setText("-");
+				lblTrack2Action7.setVisible(true);
+				sliderTrack2Action7.setVisible(true);
 				openDialog(2, 6);
 			}
 		}
@@ -5673,8 +5657,9 @@ public class MainGUI extends JFrame implements ActionListener {
 	 * @param aTrack - Track
 	 * @param aColour - Colour to be the background
 	 * @param aCommand - The command to replace the old one
+	 * @throws IOException 
 	 */
-	public static void setActionData(int aTrack, int aAction, Command aCommand){
+	public static void setActionData(int aTrack, int aAction, Command aCommand) throws IOException{
 		if (aTrack == getSelectedTrack()){
 			LeapMotionListener.setData(aCommand);
 		}
@@ -6176,7 +6161,391 @@ public class MainGUI extends JFrame implements ActionListener {
 			break;
 			default:
 				break;
+			}
+		}
+	}
 
+	public static void setSelectedAction(int aTrack, int aAction) {
+		
+		Color COLOUR_SELECTED2 = new Color(255, 255, 255);
+		//Color COLOUR_SELECTED2 = new Color(179, 224, 255);
+
+		if (aTrack == 1){
+			sliderTrack1Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack1Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack1Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack1Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack1Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack1Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack1Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack1Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack1Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack1Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack1Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack1Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack1Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack1Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 2){
+			sliderTrack2Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack2Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack2Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack2Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack2Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack2Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack2Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack2Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack2Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack2Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack2Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack2Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack2Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack2Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 3){
+			sliderTrack3Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack3Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack3Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack3Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack3Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack3Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack3Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack3Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack3Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack3Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack3Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack3Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack3Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack3Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 4){
+			sliderTrack4Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack4Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack4Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack4Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack4Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack4Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack4Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack4Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack4Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack4Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack4Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack4Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack4Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack4Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 5){
+			sliderTrack5Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack5Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack5Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack5Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack5Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack5Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack5Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack5Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack5Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack5Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack5Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack5Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack5Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack5Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 6){
+			sliderTrack6Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack6Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack6Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack6Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack6Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack6Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack6Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack6Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack6Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack6Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack6Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack6Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack6Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack6Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 7){
+			sliderTrack7Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack7Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack7Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack7Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack7Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack7Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack7Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack7Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack7Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack7Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack7Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack7Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack7Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack7Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 8){
+			sliderTrack8Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack8Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack8Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack8Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack8Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack8Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack8Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack8Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack8Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack8Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack8Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack8Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack8Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack8Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 9){
+			sliderTrack9Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack9Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack9Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack9Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack9Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack9Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack9Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack9Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack9Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack9Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack9Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack9Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack9Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack9Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 10){
+			sliderTrack10Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack10Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack10Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack10Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack10Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack10Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack10Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack10Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack10Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack10Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack10Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack10Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack10Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack10Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 11){
+			sliderTrack11Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack11Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack11Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack11Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack11Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack11Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack11Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack11Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack11Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack11Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack11Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack11Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack11Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack11Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 12){
+			sliderTrack12Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack12Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack12Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack12Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack12Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack12Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack12Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack12Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack12Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack12Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack12Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack12Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack12Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack12Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 13){
+			sliderTrack13Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack13Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack13Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack13Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack13Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack13Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack13Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack13Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack13Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack13Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack13Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack13Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack13Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack13Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 14){
+			sliderTrack14Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack14Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack14Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack14Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack14Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack14Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack14Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack14Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack14Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack14Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack14Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack14Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack14Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack14Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 15){
+			sliderTrack15Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack15Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack15Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack15Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack15Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack15Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack15Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack15Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack15Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack15Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack15Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack15Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack15Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack15Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 16){
+			sliderTrack16Action1.setBackground(COLOUR_SELECTED);
+			sliderTrack16Action2.setBackground(COLOUR_SELECTED);
+			sliderTrack16Action3.setBackground(COLOUR_SELECTED);
+			sliderTrack16Action4.setBackground(COLOUR_SELECTED);
+			sliderTrack16Action5.setBackground(COLOUR_SELECTED);
+			sliderTrack16Action6.setBackground(COLOUR_SELECTED);
+			sliderTrack16Action7.setBackground(COLOUR_SELECTED);
+			if (aAction == 0){
+				sliderTrack16Action1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderTrack16Action2.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 2){
+				sliderTrack16Action3.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 3){
+				sliderTrack16Action4.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 4){
+				sliderTrack16Action5.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 5){
+				sliderTrack16Action6.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 6){
+				sliderTrack16Action7.setBackground(COLOUR_SELECTED2);
+			}
+		} else if (aTrack == 17){
+			sliderGlobalAction1.setBackground(COLOUR_SELECTED);
+			sliderGlobalAction2.setBackground(COLOUR_SELECTED);
+			
+			if (aAction == 0){
+				sliderGlobalAction1.setBackground(COLOUR_SELECTED2);
+			} else if (aAction == 1){
+				sliderGlobalAction2.setBackground(COLOUR_SELECTED2);
 			}
 		}
 	}

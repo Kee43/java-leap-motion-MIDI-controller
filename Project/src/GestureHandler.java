@@ -23,7 +23,11 @@ public class GestureHandler {
 	 * @param aMax - Maximum value for the command 
 	 */
 	public void sendData(int aTrack, int aAction, int aCC, int aAxisIndex, float aVectorValue, int aMin, int aMax) {
-
+//		System.out.println("Track = " + aTrack);
+//		System.out.println("Action = " + aAction);
+//		System.out.println("CC = " + aCC);
+//		System.out.println("--------------");
+		
 		int value = 0;
 
 		if (aAxisIndex == 1){

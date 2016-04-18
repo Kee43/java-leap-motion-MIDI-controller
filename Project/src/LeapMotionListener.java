@@ -120,7 +120,7 @@ class LeapMotionListener extends Listener {
 			}
 
 			// Update GUI
-			if (hand.isLeft()){
+			if (hand.isLeft() && hand.confidence() > .2){
 				int appWidth = 800;
 				int appHeight = 800;
 
@@ -140,15 +140,21 @@ class LeapMotionListener extends Listener {
 					GUI.selectTrackFromGrid(appX, appY);
 					selectedAction = 1;
 				}
-
+//				System.out.println("CC = " + data.getCC());
+//				System.out.println("Action = " + data.getCommand());
+//				System.out.println("-------------------------------");
 				if (selectedAction == 0){
 					// None
 				} else if (selectedAction == 1){
 					// Selecting track
 				} else if (selectedAction == 2){
 					if (MainGUI.getSelectedTrack() == 17){
+						GUI.setSelectedAction(17, 0);
 						MainGUI.logMessage("Global Volume");
 						axisValue = getShortAxisValue(MainGUI.getGlobalAction1Axis(), hand.palmPosition());
+						
+						
+						
 						gestures.sendData(17, selectedAction, 14, axisNumber, axisValue, MainGUI.getGlobalAction1Min(), MainGUI.getGlobalAction1Max());
 					} else {
 						axisValue = getAxisValue(data.getAxis(), hand.palmPosition());
@@ -156,7 +162,7 @@ class LeapMotionListener extends Listener {
 					}
 				} else if (selectedAction == 3){
 					if (MainGUI.getSelectedTrack() == 17){
-
+						GUI.setSelectedAction(17, 1);
 						axisValue = getShortAxisValue(MainGUI.getGlobalAction2Axis(), hand.palmPosition());
 						gestures.sendData(17, selectedAction, 15, axisNumber, axisValue, MainGUI.getGlobalAction2Min(), MainGUI.getGlobalAction2Max());
 					} else {
@@ -181,7 +187,7 @@ class LeapMotionListener extends Listener {
 				} else {
 					gestures.sendData(MainGUI.getSelectedTrack(), 1, 0, 0, 0, 0, 0);
 				}
-			} else {
+			} else if (hand.isRight() && hand.confidence() > .2){
 				MainGUI.setRightHandData(fingersRightExtended, hand.palmPosition().getX(), hand.palmPosition().getY(), hand.palmPosition().getZ());
 
 				if (thumb == null && index == null && middle == null && ring == null && pinky == null && fingersRightExtended == 0){
@@ -190,6 +196,7 @@ class LeapMotionListener extends Listener {
 				}
 				if (thumb == null && index != null && middle != null && ring == null && pinky == null && fingersRightExtended == 2){
 					if (MainGUI.getSelectedTrack() != 17){
+						GUI.setSelectedAction(MainGUI.getSelectedTrack(), 0);
 						GUI.Log("Action 1");
 					} 
 					selectedAction = 2;
@@ -198,6 +205,7 @@ class LeapMotionListener extends Listener {
 				if (thumb == null && index != null && middle != null && ring != null && pinky == null && fingersRightExtended == 3){
 					selectedAction = 3;
 					if (MainGUI.getSelectedTrack() != 17){
+						GUI.setSelectedAction(MainGUI.getSelectedTrack(), 1);
 						GUI.Log("Action 2");
 					} 
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 1);
@@ -205,26 +213,32 @@ class LeapMotionListener extends Listener {
 				if (thumb == null && index != null && middle != null && ring != null && pinky != null && fingersRightExtended == 4){
 					selectedAction = 4;
 					GUI.Log("Action 3");
+					GUI.setSelectedAction(MainGUI.getSelectedTrack(), 2);
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 2);
+					
 				}
 				if (thumb != null && index != null && middle != null && ring != null && pinky != null && fingersRightExtended == 5){
 					selectedAction = 5;
 					GUI.Log("Action 4");
+					GUI.setSelectedAction(MainGUI.getSelectedTrack(), 3);
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 3);
 				}
 				if (thumb == null && index != null && middle == null && ring == null && pinky != null && fingersRightExtended == 2){
 					selectedAction = 6;
 					GUI.Log("Action 5");
+					GUI.setSelectedAction(MainGUI.getSelectedTrack(), 4);
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 4);
 				}
 				if (thumb != null && index != null && middle == null && ring == null && pinky == null && fingersRightExtended == 2){
 					selectedAction = 7;
 					GUI.Log("Action 6");
+					GUI.setSelectedAction(MainGUI.getSelectedTrack(), 5);
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 5);
 				}
 				if (thumb != null && index == null && middle == null && ring == null && pinky == null && fingersRightExtended == 1){
 					selectedAction = 8;
 					GUI.Log("Action 7");
+					GUI.setSelectedAction(MainGUI.getSelectedTrack(), 6);
 					data = Strings.getConfigSettings(MainGUI.getSelectedTrack(), 6);
 				}
 			} 
@@ -312,6 +326,8 @@ class LeapMotionListener extends Listener {
 	 */
 	public static void setData(Command aCommand){
 		data = aCommand;
+		
+	
 	}
 }
 

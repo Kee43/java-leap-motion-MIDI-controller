@@ -327,36 +327,39 @@ public class Strings {
 		} else if (aTrack == 2){
 			base = 7;
 		} else if (aTrack == 3){
-			base = 13;
+			base = 14;
 		} else if (aTrack == 4){
-			base = 19;
+			base = 21;
 		} else if (aTrack == 5){
-			base = 25;
+			base = 28;
 		} else if (aTrack == 6){
-			base = 31;
+			base = 35;
 		} else if (aTrack == 7){
-			base = 37;
+			base = 42;
 		} else if (aTrack == 8){
-			base = 43;
-		} else if (aTrack == 9){
 			base = 49;
+		} else if (aTrack == 9){
+			base = 56;
 		} else if (aTrack == 10){
-			base = 55;
+			base = 63;
 		} else if (aTrack == 11){
-			base = 61;
+			base = 70;
 		} else if (aTrack == 12){
-			base = 67;
+			base = 77;
 		} else if (aTrack == 13){
-			base = 73;
+			base = 84;
 		} else if (aTrack == 14){
-			base = 79;
-		} else if (aTrack == 15){
-			base = 85;
-		} else if (aTrack == 16){
 			base = 91;
+		} else if (aTrack == 15){
+			base = 98;
+		} else if (aTrack == 16){
+			base = 105;
 		}
 		int selection = base + aAction;
 
+		System.out.println("Selection = " + selection);
+		System.out.println("CC = " + Settings.mainTableData.get(selection).getCC());
+		System.out.println("Command = " + Settings.mainTableData.get(selection).getCommand());
 		return Settings.mainTableData.get(selection);
 	}
 
@@ -368,40 +371,39 @@ public class Strings {
 	 * @return Slot of the selected command
 	 */
 	public static int getConfigTableSlot(int aTrack, int aAction){
-
 		int base = 0;
 		if (aTrack == 1){
 			base = 0;
 		} else if (aTrack == 2){
 			base = 7;
 		} else if (aTrack == 3){
-			base = 13;
+			base = 14;
 		} else if (aTrack == 4){
-			base = 19;
+			base = 21;
 		} else if (aTrack == 5){
-			base = 25;
+			base = 28;
 		} else if (aTrack == 6){
-			base = 31;
+			base = 35;
 		} else if (aTrack == 7){
-			base = 37;
+			base = 42;
 		} else if (aTrack == 8){
-			base = 43;
-		} else if (aTrack == 9){
 			base = 49;
+		} else if (aTrack == 9){
+			base = 56;
 		} else if (aTrack == 10){
-			base = 55;
+			base = 63;
 		} else if (aTrack == 11){
-			base = 61;
+			base = 70;
 		} else if (aTrack == 12){
-			base = 67;
+			base = 77;
 		} else if (aTrack == 13){
-			base = 73;
+			base = 84;
 		} else if (aTrack == 14){
-			base = 79;
-		} else if (aTrack == 15){
-			base = 85;
-		} else if (aTrack == 16){
 			base = 91;
+		} else if (aTrack == 15){
+			base = 98;
+		} else if (aTrack == 16){
+			base = 105;
 		}
 		int slot = base + aAction;
 

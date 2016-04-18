@@ -67,6 +67,16 @@ public class InterfaceHandler {
 	public void setSliderData(int aTrack, int aAction, int aValue, int aAxis){
 		MainGUI.setSliderValue(aTrack, aAction, aValue, aAxis);
 	}
+	
+	/**
+	 * Set the selected action  
+	 * 
+	 * @param aTrack - Track
+	 * @param aAction - Gesture
+	 */
+	public void setSelectedAction(int aTrack, int aAction){
+		MainGUI.setSelectedAction(aTrack, aAction);
+	}
 
 	/**
 	 * Logging the message

@@ -40,6 +40,8 @@ public class MIDIInterface {
 			// CC 1 - 128
 			// Value 1 - 128
 
+			//System.out.println("MIDI CC = " + aAddress.getCCCommand());
+			
 			ShortMessage sm = new ShortMessage(ShortMessage.CONTROL_CHANGE, aAddress.getChannel(), aAddress.getCCCommand(), aValue);
 			midiOutDevice.getReceiver().send(sm, timeStamp);
 

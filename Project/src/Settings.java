@@ -282,17 +282,27 @@ public class Settings {
 	 * @param aTrack - Selected track
 	 * @param aAction - Selected action
 	 * @param aCommand - Selected command
+	 * @throws IOException 
 	 */
-	public void replaceCommand(int aTrack, int aAction, Command aCommand){
+	public void replaceCommand(int aTrack, int aAction, Command aCommand) throws IOException{
 
+		System.out.println("Track = " + aTrack);
+		System.out.println("aAction = " + aAction);
+		System.out.println("getCC = " + aCommand.getCC());
+		System.out.println("getCommand = " + aCommand.getCommand());
+		
 		int oldCommandSlot = Strings.getConfigTableSlot(aTrack, aAction);
 
-		mainTableData.get(oldCommandSlot).setTrack(aCommand.getTrack());
-		mainTableData.get(oldCommandSlot).setCommand(aCommand.getCommand());
-		mainTableData.get(oldCommandSlot).setMin(aCommand.getMin());
-		mainTableData.get(oldCommandSlot).setMax(aCommand.getMax());
-		mainTableData.get(oldCommandSlot).setAxis(aCommand.getAxis());
-		saveTable(mainTableData);
+		List<Command> mainTableData2 = mainTableData;
+		
+		mainTableData2.get(oldCommandSlot).setTrack(aCommand.getTrack());
+		mainTableData2.get(oldCommandSlot).setCC(aCommand.getCC());
+		mainTableData2.get(oldCommandSlot).setCommand(aCommand.getCommand());
+		mainTableData2.get(oldCommandSlot).setMin(aCommand.getMin());
+		mainTableData2.get(oldCommandSlot).setMax(aCommand.getMax());
+		mainTableData2.get(oldCommandSlot).setAxis(aCommand.getAxis());
+		saveTable(mainTableData2);
+		
 	}
 
 	/**
