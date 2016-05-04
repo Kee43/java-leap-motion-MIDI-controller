@@ -19,6 +19,8 @@ public class Settings {
 	public Settings(){
 		prefs = Preferences.userNodeForPackage(Settings.class);
 	}
+	
+	static String dir = System.getenv("APPDATA") + "/AirspaceApps/VirtualMIDIController/applicationsettings.txt";
 
 	/**
 	 * Setting the track channel preference
@@ -242,7 +244,7 @@ public class Settings {
 		FileOutputStream fileOutputStream;
 
 		try{ 
-			fileOutputStream = new FileOutputStream("settings-main.txt", false);
+			fileOutputStream = new FileOutputStream(dir, false);
 			objectOutputStream = new ObjectOutputStream(fileOutputStream);
 			objectOutputStream.writeObject(aCommands);
 			objectOutputStream .close();
@@ -263,7 +265,7 @@ public class Settings {
 	public static List<Command> loadTable() throws IOException {
 
 		try { 
-			FileInputStream fileInputStream = new FileInputStream("settings-main.txt");
+			FileInputStream fileInputStream = new FileInputStream(dir);
 			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 			mainTableData.clear();
 			mainTableData = (ArrayList<Command>) objectInputStream.readObject();

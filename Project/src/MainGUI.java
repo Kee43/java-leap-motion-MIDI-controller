@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import com.leapmotion.leap.*;
@@ -156,6 +157,11 @@ public class MainGUI extends JFrame implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					boolean success = (new File(System.getenv("APPDATA") + "/AirspaceApps/VirtualMIDIController").mkdir());
+					if (!success) { 
+					   System.out.println("Note - Directory already exists or failed to create.");
+					} 
+					
 					settings = new Settings();
 					window = new MainGUI();
 					MainGUI.frmGestureControlledMusical.setVisible(true);
